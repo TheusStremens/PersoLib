@@ -1,0 +1,5 @@
+c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\bin\PersoLib.dll
+c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\bin\PersoLib.pdb
+c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\obj\Debug\ResolveAssemblyReference.cache
+c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\obj\Debug\PersoLib.dll
+c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\obj\Debug\PersoLib.pdb
