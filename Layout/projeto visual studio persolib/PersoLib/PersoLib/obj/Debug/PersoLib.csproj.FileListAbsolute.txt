@@ -3,3 +3,9 @@ c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\bin\Perso
 c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\obj\Debug\ResolveAssemblyReference.cache
 c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\obj\Debug\PersoLib.dll
 c:\users\diego\documents\visual studio 2010\Projects\PersoLib\PersoLib\obj\Debug\PersoLib.pdb
+E:\Workspace\PersoLib\Layout\projeto visual studio persolib\PersoLib\PersoLib\bin\PersoLib.dll.config
+E:\Workspace\PersoLib\Layout\projeto visual studio persolib\PersoLib\PersoLib\bin\PersoLib.dll
+E:\Workspace\PersoLib\Layout\projeto visual studio persolib\PersoLib\PersoLib\bin\PersoLib.pdb
+E:\Workspace\PersoLib\Layout\projeto visual studio persolib\PersoLib\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
+E:\Workspace\PersoLib\Layout\projeto visual studio persolib\PersoLib\PersoLib\obj\Debug\PersoLib.dll
+E:\Workspace\PersoLib\Layout\projeto visual studio persolib\PersoLib\PersoLib\obj\Debug\PersoLib.pdb
