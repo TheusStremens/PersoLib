@@ -31,6 +31,15 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlButton btn_login;
         
         /// <summary>
+        /// txt_email_cadastro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_email_cadastro;
+        
+        /// <summary>
         /// txt_name control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,24 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_name;
         
         /// <summary>
+        /// txt_senha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_senha;
+        
+        /// <summary>
+        /// txt_repete_senha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_repete_senha;
+        
+        /// <summary>
         /// btn_cadastrar_usuario control.
         /// </summary>
         /// <remarks>
@@ -47,5 +74,23 @@ namespace PersoLib {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_cadastrar_usuario;
+        
+        /// <summary>
+        /// inputEmail1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inputEmail1;
+        
+        /// <summary>
+        /// text1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword text1;
     }
 }

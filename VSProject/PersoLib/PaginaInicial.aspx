@@ -70,14 +70,14 @@
                     </p>
                 </div>
                 <div class="col-lg-4 callout">
-                    <span class="icon icon-eye"></span>
+                    <span class="icon icon-arrow-up-right"></span>
                     <h2>Empreste seus Livros</h2>
                     <p>
                         Agora você pode sempre lembrar a quem você emprestou seu livro!
                     </p>
                 </div>
                 <div class="col-lg-4 callout">
-                    <span class="icon icon-heart"></span>
+                    <span class="icon icon-feed"></span>
                     <h2>Alerta de Prazo</h2>
                     <p>
                         A Biblioteca Pessoal alerta você e o emprestante da aproximação da data de devolução!
@@ -141,7 +141,7 @@
                                     Email:
                                 </label>
                                 <div class="col-md-4">
-                                    <input id="txt_email" name="txt_email" type="text" placeholder="email@servidor.com"
+                                    <input runat="server" id="txt_email_cadastro" type="email" placeholder="email@servidor.com"
                                         class="form-control input-md" required>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@
                                     Nome:
                                 </label>
                                 <div class="col-md-4">
-                                    <input id="txt_name" name="txt_name" runat="server" type="text" placeholder="Seu nome" class="form-control input-md"
+                                    <input runat="server" id="txt_name" name="txt_name" runat="server" type="text" placeholder="Seu nome" class="form-control input-md"
                                         required>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@
                                     Senha:
                                 </label>
                                 <div class="col-md-4">
-                                    <input id="txt_senha" name="txt_senha" type="password" placeholder="*********" class="form-control input-md"
+                                    <input runat="server" id="txt_senha" name="txt_senha" type="password" placeholder="*********" class="form-control input-md"
                                         required="">
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                                     Repita a senha:
                                 </label>
                                 <div class="col-md-4">
-                                    <input id="txt_repete_senha" name="txt_repete_senha" type="password" placeholder="*********"
+                                    <input runat="server" id="txt_repete_senha" name="txt_repete_senha" type="password" placeholder="*********"
                                         class="form-control input-md" required="">
                                 </div>
                             </div>
@@ -200,14 +200,14 @@
                                 <label for="inputEmail1" class="col-lg-4 control-label">
                                 </label>
                                 <div class="col-lg-10">
-                                    <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                                    <input runat="server" type="email" class="form-control" id="inputEmail1" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="text1" class="col-lg-4 control-label">
                                 </label>
                                 <div class="col-lg-10">
-                                    <input type="password" class="form-control" id="text1" placeholder="Senha">
+                                    <input runat="server" type="password" class="form-control" id="text1" placeholder="Senha">
                                 </div>
                             </div>
                             <div class="modal-footer">

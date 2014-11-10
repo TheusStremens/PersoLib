@@ -11,12 +11,16 @@ namespace PersoLib
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void CadastrarUsuario(object sender, EventArgs e)
         {
-            //this.txt_name.Value = "haushaushaush";
+            Usuario loNovoUsuario = new Usuario(this.txt_email_cadastro.Value.ToString(), this.txt_name.Value.ToString(), this.txt_senha.Value.ToString());
+            this.InserirNovoUsuario(loNovoUsuario);
+        }
+
+        protected void InserirNovoUsuario(Usuario aoNovoUsuario)
+        {       
         }
     }
 }
