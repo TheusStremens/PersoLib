@@ -24,7 +24,6 @@
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
     <form id="form_body" runat="server">
         <div id="navbar-main">
-            <!-- Fixed navbar -->
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -46,11 +45,9 @@
                             </li>
                         </ul>
                     </div>
-                    <!--/.nav-collapse -->
                 </div>
             </div>
         </div>
-        <!-- ==== HEADERWRAP ==== -->
         <div id="headerwrap" id="home" name="home">
             <header class="clearfix">
                 <h1><span class="icon"></span></h1>
@@ -62,8 +59,6 @@
                     <button data-target="#modal_cadastro" data-toggle="modal" type="button" class="btn btn-danger alert-success btn-lg">Comece a usar agora!</button></p>
             </header>
         </div>
-        <!-- /headerwrap -->
-        <!-- ==== GREYWRAP ==== -->
         <div id="greywrap">
             <div class="row">
                 <div class="col-lg-4 callout">
@@ -74,7 +69,6 @@
                     ou...
                     </p>
                 </div>
-                <!-- col-lg-4 -->
                 <div class="col-lg-4 callout">
                     <span class="icon icon-eye"></span>
                     <h2>Empreste seus Livros</h2>
@@ -82,7 +76,6 @@
                         Agora você pode sempre lembrar a quem você emprestou seu livro!
                     </p>
                 </div>
-                <!-- col-lg-4 -->
                 <div class="col-lg-4 callout">
                     <span class="icon icon-heart"></span>
                     <h2>Alerta de Prazo</h2>
@@ -90,12 +83,8 @@
                         A Biblioteca Pessoal alerta você e o emprestante da aproximação da data de devolução!
                     </p>
                 </div>
-                <!-- col-lg-4 -->
             </div>
-            <!-- row -->
         </div>
-        <!-- greywrap -->
-        <!-- ==== ABOUT ==== -->
         <div class="container" id="about" name="about">
             <div class="row white">
                 <br>
@@ -114,7 +103,6 @@
                     desenvolvimento para o futuro.
                     </p>
                 </div>
-                <!-- col-lg-6 -->
                 <div class="col-lg-6 text-justify">
                     <p>
                         A prática cotidiana prova que o aumento do diálogo entre os diferentes setores produtivos
@@ -127,17 +115,12 @@
                     convencionais.
                     </p>
                 </div>
-                <!-- col-lg-6 -->
             </div>
-            <!-- row -->
         </div>
-        <!-- container -->
-        <!-- ==== SECTION DIVIDER1 -->
         <section class="section-divider textdivider "></section>
-        <!-- section -->
         <div id="footerwrap">
             <div class="container">
-                <h4>Stolen by <a href="">Stremens Corp.</a> - TMA LTDA.</h4>
+                <h4>Created by <a href="">Stremens Corp.</a> - TMA LTDA.</h4>
             </div>
         </div>
         <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -180,7 +163,6 @@
                                         required="">
                                 </div>
                             </div>
-                            <!-- Password input-->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txt_repete_senha">
                                     Repita a senha:
@@ -190,7 +172,6 @@
                                         class="form-control input-md" required="">
                                 </div>
                             </div>
-                            <!-- Button (Double) -->
                         </div>
                     </div>
                     <div class="modal-footer">                        
@@ -234,12 +215,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- form -->
                 </div>
             </div>
-            <!-- Bootstrap core JavaScript
-        ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
             <style type="text/css">
                 .login {
                     padding-top: 7px;

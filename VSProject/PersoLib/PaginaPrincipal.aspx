@@ -71,7 +71,6 @@
 </head>
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
     <div id="navbar-main">
-        <!-- Fixed navbar -->
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -92,7 +91,6 @@
                         </li>
                     </ul>
                 </div>
-                <!--/.nav-collapse -->
             </div>
         </div>
     </div>
