@@ -153,17 +153,6 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-horizontal">
-                            <!-- Name input -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="txt_name">
-                                    Nome:
-                                </label>
-                                <div class="col-md-4">
-                                    <input id="txt_name" name="txt_name" runat="server" type="text" placeholder="Seu nome" class="form-control input-md"
-                                        required>
-                                </div>
-                            </div>
-                            <!-- Text input-->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txt_email">
                                     Email:
@@ -173,7 +162,15 @@
                                         class="form-control input-md" required>
                                 </div>
                             </div>
-                            <!-- Password input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="txt_name">
+                                    Nome:
+                                </label>
+                                <div class="col-md-4">
+                                    <input id="txt_name" name="txt_name" runat="server" type="text" placeholder="Seu nome" class="form-control input-md"
+                                        required>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txt_senha">
                                     Senha:
@@ -191,16 +188,6 @@
                                 <div class="col-md-4">
                                     <input id="txt_repete_senha" name="txt_repete_senha" type="password" placeholder="*********"
                                         class="form-control input-md" required="">
-                                </div>
-                            </div>
-                            <!-- Text input-->
-                            <div class="form-gruop">
-                                <label class="col-md-4 control-label" for="txt_telefone">
-                                    Telefone:
-                                </label>
-                                <div class="col-md-4">
-                                    <input id="txt_telefone" name="txt_telefone" type="text" placeholder="+xxxx xxxx-xxxx"
-                                        class="form-control input-md">
                                 </div>
                             </div>
                             <!-- Button (Double) -->
