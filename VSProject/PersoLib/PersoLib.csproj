@@ -107,6 +107,8 @@
     <Content Include="hu3.aspx" />
     <Content Include="pagina1.html" />
     <Content Include="pagina2.html" />
+    <Content Include="PaginaInicial.aspx" />
+    <Content Include="PaginaPrincipal.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +118,20 @@
     </Compile>
     <Compile Include="hu3.aspx.designer.cs">
       <DependentUpon>hu3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaInicial.aspx.cs">
+      <DependentUpon>PaginaInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaInicial.aspx.designer.cs">
+      <DependentUpon>PaginaInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaPrincipal.aspx.cs">
+      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaPrincipal.aspx.designer.cs">
+      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

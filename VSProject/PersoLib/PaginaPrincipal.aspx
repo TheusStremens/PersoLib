@@ -1,0 +1,509 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PaginaPrincipal.aspx.cs" Inherits="PersoLib.PaginaPrincipal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <title>PersoLib- Biblioteca Pessoal</title>
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+    <link href="assets/css/datepicker.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/animate-custom.css" rel="stylesheet">
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="assets/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/retina.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-func.js"></script>
+    <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#grid_livros').dataTable();
+            $('#grid_emprestimos').dataTable();
+            $('#txt_nova_data_prazo').datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
+            $('#txt_nova_data').datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
+        });
+    </script>
+    <style type="text/css">
+        .login
+        {
+            padding-top: 7px;
+        }
+        
+        .email
+        {
+            padding-top: 15px;
+            color: White;
+            text-align: right;
+        }
+        
+        .datepicker
+        {
+            z-index: 1151 !important;
+        }
+        
+        @media (min-width: 768px)
+        {
+            .acao
+            {
+                width: 60px !important;
+                max-width: 60px !important;
+                min-width: 60px !important;
+            }
+        }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet'
+        type='text/css'>
+</head>
+<body data-spy="scroll" data-offset="0" data-target="#navbar-main">
+    <div id="navbar-main">
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon icon-shield" style="font-size: 30px; color: #3498db;"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#tab_default_1" data-toggle="tab" class="smoothScroll">Meus Livros</a></li>
+                        <li><a href="#tab_default_2" data-toggle="tab" class="smoothScroll">Meus Emprestimos</a></li>
+                        <li><a href="#tab_default_3" data-toggle="tab" class="smoothScroll">Meu Perfil</a></li>
+                        <li>
+                            <div class="col-lg-2 login">
+                                <a href="pagina1.html" id="btn_login" class="btn btn-danger login">Fazer Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    Principal</h3>
+                <div class="tabbable-panel">
+                    <div class="tabbable-line">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_default_1">
+                                <div style="padding-top: 20px; padding-left: 15px;">
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#modal_novo_livro">
+                                        Cadastrar novo livro</button></div>
+                                <div class="container" style="padding-top: 20px;">
+                                    <table id="grid_livros" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Nome do Livro
+                                                </th>
+                                                <th>
+                                                    Quantidade
+                                                </th>
+                                                <th>
+                                                    Quantidade Emprestada
+                                                </th>
+                                                <th class="acao">
+                                                    Ações
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    O Símbolo Perdido
+                                                </td>
+                                                <td>
+                                                    5
+                                                </td>
+                                                <td>
+                                                    2
+                                                </td>
+                                                <td>
+                                                    <button title="Editar este livro" class="btn btn-primary btn-xs" data-toggle="modal"
+                                                        data-target="#edit">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </button>
+                                                    <button title="Excluir este livro" class="btn btn-danger btn-xs" data-toggle="modal"
+                                                        data-target="#delete">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                    </button>
+                                                    <button title="Empreste este livro" class="btn btn-warning btn-xs" data-toggle="modal"
+                                                        data-target="#modal_novo_emprestimo">
+                                                        <span class="glyphicon glyphicon-new-window"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Assassinato no Expresso do Oriente
+                                                </td>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>
+                                                    0
+                                                </td>
+                                                <td>
+                                                    <button title="Editar este livro" class="btn btn-primary btn-xs" data-toggle="modal"
+                                                        data-target="#edit">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </button>
+                                                    <button title="Excluir este livro" class="btn btn-danger btn-xs" data-toggle="modal"
+                                                        data-target="#delete">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                    </button>
+                                                    <button title="Empreste este livro" class="btn btn-warning btn-xs" data-toggle="modal"
+                                                        data-target="#modal_novo_emprestimo">
+                                                        <span class="glyphicon glyphicon-new-window"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_default_2">
+                                <div class="container" style="padding-top: 20px;">
+                                    <table id="grid_emprestimos" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Nome do Livro
+                                                </th>
+                                                <th>
+                                                    Nome do Emprestante
+                                                </th>
+                                                <th>
+                                                    Email do Emprestante
+                                                </th>
+                                                <th>
+                                                    Data de Devolução
+                                                </th>
+                                                <th class="acao">
+                                                    Ações
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Assassinato no Expresso do Oriente
+                                                </td>
+                                                <td>
+                                                    Matheus Magalhães
+                                                </td>
+                                                <td>
+                                                    matheus@magalhaes.com
+                                                </td>
+                                                <td>
+                                                    15/11/2014
+                                                </td>
+                                                <td>
+                                                    <span style="padding-left: 14px;">
+                                                        <button title="Alterar prazo" class="btn btn-warning btn-xs" data-toggle="modal"
+                                                            data-target="#modal_alterar_prazo">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </button>
+                                                        <button title="Finalizar empréstimo" class="btn btn-success btn-xs" data-toggle="modal"
+                                                            data-target="#modal_finalizar_emprestimo">
+                                                            <span class="glyphicon glyphicon-ok"></span>
+                                                        </button>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_default_3">
+                                <div class="container" style="padding-top: 20px;">
+                                    <div class="form-group">
+                                        <h4>
+                                            Nome
+                                        </h4>
+                                        <input class="form-control" type="text" maxlength="50" placeholder="Matheus Magalhães Batista dos Santos">
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>
+                                            E-mail</h4>
+                                        <input class="form-control " type="text" maxlength="50" placeholder="matheus@magalhaes.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>
+                                            Senha</h4>
+                                        <input class="form-control " type="password" maxlength="20" placeholder="***********">
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>
+                                            Confirme a senha</h4>
+                                        <input class="form-control " type="password" maxlength="20" placeholder="***********">
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>
+                                            Telefone</h4>
+                                        <input class="form-control " type="password" maxlength="10" placeholder="99522656">
+                                    </div>
+                                    <button class="btn btn-info" data-toggle="modal" data-dismiss="modal" data-target="#modal_atualizar_perfil">
+                                        Atualizar Perfil
+                                    </button>
+                                    <button class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#modal_excluir_conta">
+                                        Excluir conta
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="footerwrap" class="navbar-fixed-bottom">
+        <div class="container">
+            <h4>
+                Created by <a href="">Stremens Corp.</a> - TMA LTDA.</h4>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_novo_livro" tabindex="-1" role="dialog" aria-labelledby="edit"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×</button>
+                    <h4 class="modal-title custom_align" id="H1">
+                        Cadastre seu Livro</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control " type="text" placeholder="Nome do Livro">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control " type="text" placeholder="Quantidade">
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success btn-lg" data-dismiss="modal" style="width: 100%;">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×</button>
+                    <h4 class="modal-title custom_align">
+                        Editando...</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control " type="text" placeholder="Nome do Livro">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control " type="text" placeholder="Quantidade">
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal" style="width: 100%;">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_novo_emprestimo" tabindex="-1" role="dialog" aria-labelledby="edit"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title custom_align">
+                        Emprestar Livro
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control" disabled type="text" placeholder="O Símbolo Perdido">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control " type="text" placeholder="Nome do Emprestante">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control " type="text" placeholder="E-mail do Emprestante">
+                    </div>
+                    <div class="form-group">
+                        <input id="txt_nova_data" maxlength="10" class="form-control" data-mask="99/99/9999"
+                            type="text" placeholder="Data de Devolução">
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Emprestar
+                    </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×</button>
+                    <h4 class="modal-title custom_align">
+                        Deletar</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Você tem certeza
+                        que gostaria de deletar este livro e todas as suas cópias?</div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Sim</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_excluir_conta" tabindex="-1" role="dialog" aria-labelledby="edit"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title custom_align">
+                        Excluir Conta
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Você tem certeza
+                        que gostaria de excluir sua conta na Biblioteca Pessoal?
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Sim
+                    </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Não
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_atualizar_perfil" tabindex="-1" role="dialog" aria-labelledby="edit"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title custom_align">
+                        Atualizar
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Seu perfil foi
+                        atualizado com sucesso!
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Ok
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_finalizar_emprestimo" tabindex="-1" role="dialog"
+        aria-labelledby="edit" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title custom_align">
+                        Devolução de Livro
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Você tem certeza
+                        que gostaria de finalizar o empréstimo deste livro?
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Sim
+                    </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Não
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_alterar_prazo" tabindex="-1" role="dialog" aria-labelledby="edit"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×</button>
+                    <h4 class="modal-title custom_align" id="H3">
+                        Alterando o prazo...</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control" disabled type="text" placeholder="24/11/2014">
+                    </div>
+                    <div class="form-group">
+                        <input id="txt_nova_data_prazo" maxlength="10" class="form-control" data-mask="99/99/9999"
+                            type="text" placeholder="Nova data">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" style="width: 100%;">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

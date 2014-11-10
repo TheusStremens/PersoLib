@@ -4,3 +4,9 @@ c:\users\philippe correia\documents\visual studio 2013\Projects\PersoLib\PersoLi
 c:\users\philippe correia\documents\visual studio 2013\Projects\PersoLib\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
 c:\users\philippe correia\documents\visual studio 2013\Projects\PersoLib\PersoLib\obj\Debug\PersoLib.dll
 c:\users\philippe correia\documents\visual studio 2013\Projects\PersoLib\PersoLib\obj\Debug\PersoLib.pdb
+E:\Workspace\PersoLib\VSProject\PersoLib\bin\PersoLib.dll.config
+E:\Workspace\PersoLib\VSProject\PersoLib\bin\PersoLib.dll
+E:\Workspace\PersoLib\VSProject\PersoLib\bin\PersoLib.pdb
+E:\Workspace\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
+E:\Workspace\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.dll
+E:\Workspace\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.pdb
