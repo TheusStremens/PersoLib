@@ -7,10 +7,10 @@ namespace PersoLib
 {
     public class Usuario
     {
-        private int USR_id { set; get; }
-        private string USR_email { set; get; }
-        private string USR_nome { set; get; }
-        private string USR_senha { set; get; }
+        public int USR_id { set; get; }
+        public string USR_email { set; get; }
+        public string USR_nome { set; get; }
+        public string USR_senha { set; get; }
 
         public Usuario(string aUSR_email, string aUSR_nome, string aUSR_senha)
         {

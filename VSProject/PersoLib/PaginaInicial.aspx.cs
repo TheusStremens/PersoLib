@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,7 +23,34 @@ namespace PersoLib
         }
 
         protected void InserirNovoUsuario(Usuario aoNovoUsuario)
-        {       
+        {
+            //int result = -1;
+            MySqlConnection conn = new
+            MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            try
+            {
+                conn.Open();
+                string lsSQLQuery = "insert into usr_usuario(USR_email, USR_nome, USR_senha) values(@email, @nome, @senha)";
+                MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
+                cmd.Parameters.AddWithValue("@email", aoNovoUsuario.USR_email);
+                cmd.Parameters.AddWithValue("@nome", aoNovoUsuario.USR_nome);
+                cmd.Parameters.AddWithValue("@senha", aoNovoUsuario.USR_senha);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            catch (MySqlException ex)
+            {
+                
+            }
+            finally
+            {
+                conn.Close();
+            }
+            //return result;
+
+
+
+
         }
     }
 }

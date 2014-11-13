@@ -16,3 +16,9 @@ C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\Perso
 C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
 C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.dll
 C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.pdb
+E:\Workspace\VSProject\PersoLib\bin\PersoLib.dll.config
+E:\Workspace\VSProject\PersoLib\bin\PersoLib.dll
+E:\Workspace\VSProject\PersoLib\bin\PersoLib.pdb
+E:\Workspace\VSProject\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
+E:\Workspace\VSProject\PersoLib\obj\Debug\PersoLib.dll
+E:\Workspace\VSProject\PersoLib\obj\Debug\PersoLib.pdb
