@@ -105,7 +105,6 @@
     <Content Include="assets\js\modernizr.custom.js" />
     <Content Include="assets\js\retina.js" />
     <Content Include="assets\js\smoothscroll.js" />
-    <Content Include="hu3.aspx" />
     <Content Include="pagina1.html" />
     <Content Include="pagina2.html" />
     <Content Include="PaginaInicial.aspx">
@@ -115,15 +114,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\BUsuario.cs" />
-    <Compile Include="DAL\DALUsuario.cs" />
-    <Compile Include="hu3.aspx.cs">
-      <DependentUpon>hu3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="hu3.aspx.designer.cs">
-      <DependentUpon>hu3.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PaginaInicial.aspx.cs">
       <DependentUpon>PaginaInicial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,7 +129,6 @@
       <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entity\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\.DS_Store" />
@@ -169,7 +158,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PersoLib_DAL\PersoLib_DAL.csproj">
+      <Project>{c6bd27c5-9eee-4dd1-bb2d-ef6eaa01992d}</Project>
+      <Name>PersoLib_DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

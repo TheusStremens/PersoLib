@@ -124,18 +124,18 @@
                 <h4>Created by <a href="">Stremens Corp.</a> - TMA LTDA.</h4>
             </div>
         </div>
-        <div runat="server" id="modal_cadastrado_sucesso" class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div runat="server" id="modal_cadastrado_sucesso" data-backdrop="static" class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title custom_align">Cadastro de Conta</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="alert alert-sucess">
+                        <div class="text-justify alert alert-sucess">
                             Sua conta foi criada com sucesso! Agora você já pode fazer seu login e começar a usar a Biblioteca Pessoal!
                         </div>
-                        <div class="modal-footer ">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">
+                        <div class="modal-footer-sm">
+                            <button runat="server" onserverclick="FecharPopupCadastro" type="button" class="btn btn-success">
                                 <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Ok
                             </button>
                         </div>
@@ -144,12 +144,10 @@
             </div>
         </div>
         <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
+            aria-hidden="true" data-backdrop="static">
             <div class="modal-dialog">
                 <div runat="server" class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    <div class="modal-header">                        
                         </button>
                         <div runat="server" id="div_mensagem_modal" visible="false" class="alert alert-danger alert-dismissible" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -202,9 +200,7 @@
                     </div>
                     <div class="modal-footer">
                         <asp:Button ID="btn_cadastrar_usuario" runat="server" class="btn btn-success" OnClick="CadastrarUsuario" Text="Cadastrar" />
-                        <button id="btn_cancelar" type="reset" data-dismiss="modal" name="btn_cancelar" class="btn btn-danger">
-                            Cancelar
-                        </button>
+                        <asp:LinkButton ID="btn_cancelar" runat="server" class="btn btn-danger" OnClick="FecharPopupCadastro" Text="Cancelar"></asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -236,7 +232,7 @@
                                     <input runat="server" type="password" class="form-control" id="text1" placeholder="Senha">
                                 </div>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer-sm ">
                                 <a href="PaginaPrincipal.aspx" class="btn btn-success">Entrar</a>
                             </div>
                         </div>
@@ -259,6 +255,7 @@
             <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
             <script type="text/javascript" src="assets/js/retina.js"></script>
             <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+            <button class="hide" runat="server" id="btn_registro_sucesso" onserverclick="AbrirPopupConfirmacao" ></button>
     </form>
 </body>
 </html>

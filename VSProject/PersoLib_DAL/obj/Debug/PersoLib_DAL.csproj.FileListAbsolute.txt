@@ -1,0 +1,4 @@
+E:\Workspace\VSProject\PersoLib_DAL\bin\Debug\PersoLib_DAL.dll
+E:\Workspace\VSProject\PersoLib_DAL\bin\Debug\PersoLib_DAL.pdb
+E:\Workspace\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.dll
+E:\Workspace\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.pdb

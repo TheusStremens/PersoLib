@@ -19,6 +19,8 @@ C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug
 E:\Workspace\VSProject\PersoLib\bin\PersoLib.dll.config
 E:\Workspace\VSProject\PersoLib\bin\PersoLib.dll
 E:\Workspace\VSProject\PersoLib\bin\PersoLib.pdb
+E:\Workspace\VSProject\PersoLib\bin\PersoLib_DAL.dll
+E:\Workspace\VSProject\PersoLib\bin\PersoLib_DAL.pdb
 E:\Workspace\VSProject\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
 E:\Workspace\VSProject\PersoLib\obj\Debug\PersoLib.dll
 E:\Workspace\VSProject\PersoLib\obj\Debug\PersoLib.pdb

@@ -1,11 +1,5 @@
-﻿using MySql.Data.MySqlClient;
-using PersoLib.Business;
+﻿using PersoLib_DAL;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -19,12 +13,14 @@ namespace PersoLib
 
         protected void CadastrarUsuario(object sender, EventArgs e)
         {
-            Usuario loNovoUsuario = new Usuario(this.txt_email_cadastro.Value.ToString(), this.txt_name.Value.ToString(), this.txt_senha.Value.ToString(), this.txt_repete_senha.Value.ToString());
-            string lsMensagemOperacao = String.Empty;
-            BUsuario loBUsario = new BUsuario(loNovoUsuario);
-            if(loBUsario.InserirNovoUsuario(out lsMensagemOperacao))
+            this.div_mensagem_modal.Visible = false;
+            Entity.Usuario loNovoUsuario = new Entity.Usuario(this.txt_email_cadastro.Value.ToString(), this.txt_name.Value.ToString(), this.txt_senha.Value.ToString(), this.txt_repete_senha.Value.ToString());
+            string lsMensagemOperacao = string.Empty;
+
+            if (new Business.Usuario().InserirNovoUsuario(loNovoUsuario, out lsMensagemOperacao))
             {
-                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_cadastrado_sucesso').modal('show'); </script>", false);
+                this.LimparCampos();
+                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "registro_sucesso", "<script> document.getElementById('"+ btn_registro_sucesso.ClientID +"').click(); </script>", false);
             }
             else
             {
@@ -32,6 +28,27 @@ namespace PersoLib
                 this.lbl_mensagem_modal.Text = lsMensagemOperacao;
                 ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_cadastro').modal('show'); </script>", false);
             }
-        }      
+        }
+
+        private void LimparCampos()
+        {
+            this.div_mensagem_modal.Visible = false;
+            this.txt_name.Value = string.Empty;
+            this.txt_email_cadastro.Value = string.Empty;
+            this.txt_senha.Value = string.Empty;
+            this.txt_repete_senha.Value = string.Empty;
+        }
+
+        protected void FecharPopupCadastro(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "fechar_popup_cadastro", "<script> $('#modal_cadastro').modal('hide'); </script>", false);
+            ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "fechar_popup_cadastro2", "<script> $('#modal_cadastrado_sucesso').modal('hide'); </script>", false);
+            this.LimparCampos();
+        }
+
+        protected void AbrirPopupConfirmacao(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_cadastrado_sucesso').modal('show'); </script>", false);
+        }
     }
 }
