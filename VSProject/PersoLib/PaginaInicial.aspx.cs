@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using PersoLib.Business;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,39 +19,19 @@ namespace PersoLib
 
         protected void CadastrarUsuario(object sender, EventArgs e)
         {
-            Usuario loNovoUsuario = new Usuario(this.txt_email_cadastro.Value.ToString(), this.txt_name.Value.ToString(), this.txt_senha.Value.ToString());
-            this.InserirNovoUsuario(loNovoUsuario);
-        }
-
-        protected void InserirNovoUsuario(Usuario aoNovoUsuario)
-        {
-            //int result = -1;
-            MySqlConnection conn = new
-            MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            try
+            Usuario loNovoUsuario = new Usuario(this.txt_email_cadastro.Value.ToString(), this.txt_name.Value.ToString(), this.txt_senha.Value.ToString(), this.txt_repete_senha.Value.ToString());
+            string lsMensagemOperacao = String.Empty;
+            BUsuario loBUsario = new BUsuario(loNovoUsuario);
+            if(loBUsario.InserirNovoUsuario(out lsMensagemOperacao))
             {
-                conn.Open();
-                string lsSQLQuery = "insert into usr_usuario(USR_email, USR_nome, USR_senha) values(@email, @nome, @senha)";
-                MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
-                cmd.Parameters.AddWithValue("@email", aoNovoUsuario.USR_email);
-                cmd.Parameters.AddWithValue("@nome", aoNovoUsuario.USR_nome);
-                cmd.Parameters.AddWithValue("@senha", aoNovoUsuario.USR_senha);
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
+                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_cadastrado_sucesso').modal('show'); </script>", false);
             }
-            catch (MySqlException ex)
+            else
             {
-                
+                this.div_mensagem_modal.Visible = true;
+                this.lbl_mensagem_modal.Text = lsMensagemOperacao;
+                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_cadastro').modal('show'); </script>", false);
             }
-            finally
-            {
-                conn.Close();
-            }
-            //return result;
-
-
-
-
-        }
+        }      
     }
 }

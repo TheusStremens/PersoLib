@@ -31,6 +31,33 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlButton btn_login;
         
         /// <summary>
+        /// modal_cadastrado_sucesso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl modal_cadastrado_sucesso;
+        
+        /// <summary>
+        /// div_mensagem_modal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_mensagem_modal;
+        
+        /// <summary>
+        /// lbl_mensagem_modal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_mensagem_modal;
+        
+        /// <summary>
         /// txt_email_cadastro control.
         /// </summary>
         /// <remarks>

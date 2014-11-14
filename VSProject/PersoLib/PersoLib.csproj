@@ -115,6 +115,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\BUsuario.cs" />
+    <Compile Include="DAL\DALUsuario.cs" />
     <Compile Include="hu3.aspx.cs">
       <DependentUpon>hu3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -137,7 +139,7 @@
       <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="Entity\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\.DS_Store" />
@@ -167,6 +169,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

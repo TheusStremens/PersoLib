@@ -435,8 +435,8 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-warning">
-                        <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Seu perfil foi
+                    <div class="alert alert-sucess">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Seu perfil foi
                         atualizado com sucesso!
                     </div>
                 </div>

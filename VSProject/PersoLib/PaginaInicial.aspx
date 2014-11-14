@@ -56,7 +56,8 @@
                     <p>Seus livros em um só lugar</p>
                 </h3>
                 <p>
-                    <button data-target="#modal_cadastro" data-toggle="modal" type="button" class="btn btn-danger alert-success btn-lg">Comece a usar agora!</button></p>
+                    <button data-target="#modal_cadastro" data-toggle="modal" type="button" class="btn btn-danger alert-success btn-lg">Comece a usar agora!</button>
+                </p>
             </header>
         </div>
         <div id="greywrap">
@@ -123,6 +124,25 @@
                 <h4>Created by <a href="">Stremens Corp.</a> - TMA LTDA.</h4>
             </div>
         </div>
+        <div runat="server" id="modal_cadastrado_sucesso" class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title custom_align">Cadastro de Conta</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-sucess">
+                            Sua conta foi criada com sucesso! Agora você já pode fazer seu login e começar a usar a Biblioteca Pessoal!
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">
+                                <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Ok
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
@@ -131,6 +151,12 @@
                         <button type="button" class="close" data-dismiss="modal">
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                         </button>
+                        <div runat="server" id="div_mensagem_modal" visible="false" class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">    </span>
+                            <asp:Label runat="server" ID="lbl_mensagem_modal" Text=""> </asp:Label>
+                        </div>
                         <h4 class="modal-title" id="myModalLabel">Digite seus Dados!
                         </h4>
                     </div>
@@ -174,7 +200,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">                        
+                    <div class="modal-footer">
                         <asp:Button ID="btn_cadastrar_usuario" runat="server" class="btn btn-success" OnClick="CadastrarUsuario" Text="Cadastrar" />
                         <button id="btn_cancelar" type="reset" data-dismiss="modal" name="btn_cancelar" class="btn btn-danger">
                             Cancelar
