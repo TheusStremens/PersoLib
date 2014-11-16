@@ -9,6 +9,9 @@ namespace PersoLib_DAL
     {
         internal class Usuario
         {
+            /* Insere novo usuário no banco.
+             * Retorna 1 se a operção foi executada com sucesso.
+             * Retorna -1 se ocorreu algum erro na operação, seja erro no banco ou alguma violação de integridade. */
             internal int InserirNovoUsuario(Entity.Usuario aoUsuario)
             {
                 int liResult = -1;
@@ -36,6 +39,11 @@ namespace PersoLib_DAL
                 return liResult;
             }
 
+            /* Atualiza dados de um usuário no banco.
+             * A função já verifica se o nome, e-mail e senha estão vazios e atualiza cada um desses campos
+             * apenas se eles não forem vazios. Se por exemplo, só nome estiver diferente de vazio, então só atualizará nome.
+             * Retorna 1 se a operção foi executada com sucesso.
+             * Retorna -1 se ocorreu algum erro na operação, seja erro no banco ou alguma violação de integridade. */
             internal int AtualizarDadosUsuario(Entity.Usuario aoUsuario)
             {
                 int liResult = -1;
@@ -112,6 +120,8 @@ namespace PersoLib_DAL
                 return liResult;
             }
 
+            /* Retorna 1 se a operção foi executada com sucesso.
+             * Retorna -1 se ocorreu algum erro na operação. */
             internal int DesativarUsuario(Entity.Usuario aoUsuario)
             {
                 int liResult = -1;
@@ -137,6 +147,9 @@ namespace PersoLib_DAL
                 return liResult;
             }
 
+            /* Se já existe um usuário no banco com o e-mail em questão, ele retorna 1.
+             * Se não existe um usuário com esse e-mail, retorna 0.
+             * Retorna -1 se ocorreu algum erro na operação. */
             internal int ExisteUsuarioEmail(Entity.Usuario aoUsuario)
             {
                 int liResult = -1;
@@ -166,6 +179,8 @@ namespace PersoLib_DAL
                 return liResult;
             }
 
+            /* Retorna o id do usuário caso exista um usuário com aquele e-mail e senha.
+             * Retorna -1 se não existe usuário com aquele e-mail e senha ou ocorreu um erro no banco. */
             internal int LoginUsuario(Entity.Usuario aoUsuario)
             {
                 int liResult = -1;
@@ -201,6 +216,8 @@ namespace PersoLib_DAL
                 return liResult;
             }
 
+            /* Retorna os dados de um usuário através do id dele.
+             * Retorna null se por algum motivo o usuário não existe ou ocorreu um erro no banco. */
             internal Entity.Usuario ObterDadosUsuario(int aiIdUsuario)
             {
                 MySqlConnection conn = new

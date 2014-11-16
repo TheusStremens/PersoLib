@@ -7,8 +7,30 @@ namespace PersoLib
 {
     public partial class PaginaInicial : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
+
+        protected void LoginUsuario(object sender, EventArgs e)
+        {
+            this.div_erro_login.Visible = false;
+            Entity.Usuario loUsuario = new Entity.Usuario(this.txt_email_login.Value.ToString(), string.Empty, this.txt_senha_login.Value.ToString(), this.txt_senha_login.Value.ToString());
+            string lsMensagemOperacao = string.Empty;
+
+            //if (new Business.Usuario().VerificarLogin(loUsuario, out lsMensagemOperacao) == -1)
+            //{
+            //    this.div_erro_login.Visible = true;
+            //    this.lbl_mensagem_login.Text = lsMensagemOperacao;
+            //    ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_login').modal('show'); </script>", false);
+            //}
+            //else
+            //{
+                //this.Context.Items["ID_Usuario"] = 112;
+                Response.Cookies["test"].Value = "testando";
+                Response.Cookies["test"].Expires = DateTime.Now.AddMinutes(10);
+                Response.Redirect("PaginaPrincipal.aspx?testando");                
+            //}
         }
 
         protected void CadastrarUsuario(object sender, EventArgs e)
