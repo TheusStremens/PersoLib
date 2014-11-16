@@ -28,7 +28,18 @@ namespace PersoLib
 
         protected void AtualizarPerfil(object sender, EventArgs e)
         {
+            try
+            {
+                //verificar a repetição de password
+                Entity.Usuario loAlterarUsuario = new Entity.Usuario(this.txt_email.Value.ToString(), this.txt_nome.Value.ToString(), this.txt_nova_senha.Value.ToString(), this.password.Value.ToString());
+                string lsMensagemOperacao = string.Empty;
+                new  Business.Usuario().AlterarUsuario(loAlterarUsuario, lsMensagemOperacao);
 
+            }
+            catch
+            {
+
+            }
         }
     }
 }
