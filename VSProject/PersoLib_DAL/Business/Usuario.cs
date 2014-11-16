@@ -68,18 +68,18 @@ namespace PersoLib_DAL
             internal int VerificarLogin(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
-
+                int ID = -1;
                 if (!(VerificaExistenciaEmail(aoUsuario, out lsMensagemOperacao)))
                 {
-                    return -1;
+                    return ID;
                 }
                 else if (new DAL.Usuario().LoginUsuario(aoUsuario) == -1)
                     {
                         lsMensagemOperacao = "Senha invalida para este login!";
-                        return -1;
+                        return ID;
                     }
-                
-                return new DAL.Usuario().LoginUsuario(aoUsuario);
+                ID = new DAL.Usuario().LoginUsuario(aoUsuario);
+                return ID; 
             }
 
             internal bool AlterarUsuaio(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
@@ -131,6 +131,32 @@ namespace PersoLib_DAL
                 return lbValidado;
             }
 
+            //Carrega dados do usuario utilizando o ID do login
+            internal bool CarregarDados(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            {
+                int ID;
+                ID = VerificarLogin(aoUsuario, out lsMensagemOperacao);
+                if (ID == -1)
+                {
+                    lsMensagemOperacao = "não foi possivel carregar os dados!";
+                    return false;
+                }
+               
+                new DAL.Usuario().ObterDadosUsuario(ID);
+                return true;
+            }
+
+            internal bool DesativarUsuario(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            {
+                lsMensagemOperacao = string.Empty;
+                if(new DAL.Usuario().DesativarUsuario(aoUsuario) == -1)
+                {
+                    lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
+                    return false;
+                }
+                return true;
+            }
+            
         }
     }
 }
