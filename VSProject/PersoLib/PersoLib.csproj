@@ -105,8 +105,6 @@
     <Content Include="assets\js\modernizr.custom.js" />
     <Content Include="assets\js\retina.js" />
     <Content Include="assets\js\smoothscroll.js" />
-    <Content Include="pagina1.html" />
-    <Content Include="pagina2.html" />
     <Content Include="PaginaInicial.aspx">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Content>

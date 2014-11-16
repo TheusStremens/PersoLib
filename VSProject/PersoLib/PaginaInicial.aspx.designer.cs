@@ -130,6 +130,15 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword text1;
         
         /// <summary>
+        /// btn_login_usuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_login_usuario;
+        
+        /// <summary>
         /// btn_registro_sucesso control.
         /// </summary>
         /// <remarks>

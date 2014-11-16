@@ -7,7 +7,7 @@ namespace PersoLib_DAL
     {
         public class Usuario
         {
-            internal bool VerificaExistenciaEmail(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public bool VerificaExistenciaEmail(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 if (new DAL.Usuario().ExisteUsuarioEmail(aoUsuario) != 1)
@@ -18,7 +18,7 @@ namespace PersoLib_DAL
                 return true;
             }
 
-            internal bool InserirNovoUsuario(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public bool InserirNovoUsuario(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 bool lbValidado = true;
@@ -65,7 +65,7 @@ namespace PersoLib_DAL
             }
 
             
-            internal int VerificarLogin(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public int VerificarLogin(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 int ID = -1;
@@ -82,7 +82,7 @@ namespace PersoLib_DAL
                 return ID; 
             }
 
-            internal bool AlterarUsuaio(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public bool AlterarUsuaio(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 bool lbValidado = true;
@@ -116,7 +116,7 @@ namespace PersoLib_DAL
                     lbValidado = false;
                 }
 
-                if(string.IsNullOrEmpty(aoUsuario.USR_nome) || string.IsNullOrEmpty(aoUsuario.USR_email){
+                if(string.IsNullOrEmpty(aoUsuario.USR_nome) || string.IsNullOrEmpty(aoUsuario.USR_email) ){
                     lsMensagemOperacao = "Algum campo não foi preenchido. Favor Verificar dados!";
                 }
 
@@ -132,7 +132,7 @@ namespace PersoLib_DAL
             }
 
             //Carrega dados do usuario utilizando o ID do login
-            internal bool CarregarDados(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public bool CarregarDados(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
                 int ID;
                 ID = VerificarLogin(aoUsuario, out lsMensagemOperacao);
@@ -146,7 +146,7 @@ namespace PersoLib_DAL
                 return true;
             }
 
-            internal bool DesativarUsuario(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public bool DesativarUsuario(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 if(new DAL.Usuario().DesativarUsuario(aoUsuario) == -1)

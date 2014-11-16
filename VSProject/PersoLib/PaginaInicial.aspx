@@ -233,7 +233,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer-sm ">
-                                <a href="PaginaPrincipal.aspx" class="btn btn-success">Entrar</a>
+                                <asp:Button ID="btn_login_usuario" runat="server" class="btn btn-success" OnClick="LoginUsuario" Text="Login" />
                             </div>
                         </div>
                     </div>
