@@ -14,23 +14,22 @@ namespace PersoLib
 
         protected void LoginUsuario(object sender, EventArgs e)
         {
-            //this.div_erro_login.Visible = false;
-            //Entity.Usuario loUsuario = new Entity.Usuario(this.txt_email_login.Value.ToString(), string.Empty, this.txt_senha_login.Value.ToString(), this.txt_senha_login.Value.ToString());
-            //string lsMensagemOperacao = string.Empty;
+            this.div_erro_login.Visible = false;
+            Entity.Usuario loUsuario = new Entity.Usuario(this.txt_email_login.Value.ToString(), string.Empty, this.txt_senha_login.Value.ToString(), this.txt_senha_login.Value.ToString());
+            string lsMensagemOperacao = string.Empty;
+            int liLoginUsuario = new Business.Usuario().VerificarLogin(loUsuario, out lsMensagemOperacao);
 
-            //if (new Business.Usuario().VerificarLogin(loUsuario, out lsMensagemOperacao) == -1)
-            //{
-            //    this.div_erro_login.Visible = true;
-            //    this.lbl_mensagem_login.Text = lsMensagemOperacao;
-            //    ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_login').modal('show'); </script>", false);
-            //}
-            //else
-            //{
-                //this.Context.Items["ID_Usuario"] = 112;
-                //Response.Cookies["test"].Value = "testando";
-                //Response.Cookies["test"].Expires = DateTime.Now.AddMinutes(10);
-                //Response.Redirect("PaginaPrincipal.aspx?testando");                
-            //}
+            if (liLoginUsuario == -1)
+            {
+                this.div_erro_login.Visible = true;
+                this.lbl_mensagem_login.Text = lsMensagemOperacao;
+                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_login').modal('show'); </script>", false);
+            }
+            else
+            {
+                Session["ID_Usuario"] = liLoginUsuario;
+                Response.Redirect("PaginaPrincipal.aspx");
+            }
         }
 
         protected void CadastrarUsuario(object sender, EventArgs e)

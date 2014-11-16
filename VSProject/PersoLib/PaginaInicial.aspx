@@ -210,10 +210,15 @@
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
+                        <div runat="server" id="div_erro_login" visible="false" class="alert alert-danger alert-dismissible" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">    </span>
+                            <asp:Label runat="server" ID="lbl_mensagem_login" Text=""> </asp:Label>
+                        </div>
                         <button type="button" class="close" data-dismiss="modal">
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                         </button>
-                        <h4 class="modal-title" id="myModalLabel">Login
+                        <h4 class="modal-title" id="myModalLabel2">Login
                         </h4>
                     </div>
                     <div class="modal-body">
@@ -222,18 +227,18 @@
                                 <label for="inputEmail1" class="col-lg-4 control-label">
                                 </label>
                                 <div class="col-lg-10">
-                                    <input runat="server" type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                                    <input runat="server" type="email" class="form-control" id="txt_email_login" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="text1" class="col-lg-4 control-label">
                                 </label>
                                 <div class="col-lg-10">
-                                    <input runat="server" type="password" class="form-control" id="text1" placeholder="Senha">
+                                    <input runat="server" type="password" class="form-control" id="txt_senha_login" placeholder="Senha">
                                 </div>
                             </div>
                             <div class="modal-footer-sm ">
-                                <asp:Button ID="btn_login_usuario" runat="server" class="btn btn-success" OnClick="LoginUsuario" Text="Login" />
+                                <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-success" OnClick="LoginUsuario" Text="Entrar"></asp:LinkButton>
                             </div>
                         </div>
                     </div>

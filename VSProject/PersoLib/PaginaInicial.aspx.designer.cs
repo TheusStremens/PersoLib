@@ -112,31 +112,49 @@ namespace PersoLib {
         protected global::System.Web.UI.WebControls.LinkButton btn_cancelar;
         
         /// <summary>
-        /// inputEmail1 control.
+        /// div_erro_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inputEmail1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_erro_login;
         
         /// <summary>
-        /// text1 control.
+        /// lbl_mensagem_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword text1;
+        protected global::System.Web.UI.WebControls.Label lbl_mensagem_login;
         
         /// <summary>
-        /// btn_login_usuario control.
+        /// txt_email_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_login_usuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_email_login;
+        
+        /// <summary>
+        /// txt_senha_login control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_senha_login;
+        
+        /// <summary>
+        /// LinkButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
         /// btn_registro_sucesso control.

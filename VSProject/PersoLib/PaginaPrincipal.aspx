@@ -238,29 +238,24 @@
                                         <h4>
                                             Nome
                                         </h4>
-                                        <input class="form-control" type="text" maxlength="50" placeholder="Matheus Magalhães Batista dos Santos">
+                                        <input runat="server" id="txt_nome" class="form-control" type="text" maxlength="50" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <h4>
                                             E-mail</h4>
-                                        <input class="form-control " type="text" maxlength="50" placeholder="matheus@magalhaes.com">
+                                        <input runat="server" id="txt_email" class="form-control " type="text" maxlength="50" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <h4>
-                                            Senha</h4>
-                                        <input class="form-control " type="password" maxlength="20" placeholder="***********">
+                                            Nova Senha</h4>
+                                        <input runat="server" id="txt_nova_senha" class="form-control " type="password" maxlength="20" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <h4>
-                                            Confirme a senha</h4>
-                                        <input class="form-control " type="password" maxlength="20" placeholder="***********">
+                                            Confirme a nova senha</h4>
+                                        <input class="form-control " type="password" maxlength="20" placeholder="">
                                     </div>
-                                    <div class="form-group">
-                                        <h4>
-                                            Telefone</h4>
-                                        <input class="form-control " type="password" maxlength="10" placeholder="99522656">
-                                    </div>
-                                    <button class="btn btn-info" data-toggle="modal" data-dismiss="modal" data-target="#modal_atualizar_perfil">
+                                    <button class="btn btn-info" runat="server" id="btn_atualizar_perfil" onclick="AtualizarPerfil">
                                         Atualizar Perfil
                                     </button>
                                     <button class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#modal_excluir_conta">
@@ -417,32 +412,6 @@
                     </button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">
                         <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Não
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="modal_atualizar_perfil" tabindex="-1" role="dialog" aria-labelledby="edit"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        ×
-                    </button>
-                    <h4 class="modal-title custom_align">
-                        Atualizar
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <div class="alert alert-sucess">
-                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Seu perfil foi
-                        atualizado com sucesso!
-                    </div>
-                </div>
-                <div class="modal-footer ">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">
-                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Ok
                     </button>
                 </div>
             </div>

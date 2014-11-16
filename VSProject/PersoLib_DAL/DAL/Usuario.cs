@@ -2,6 +2,7 @@
 using System.Configuration;
 using PersoLib_DAL;
 using System.Text;
+using System;
 
 namespace PersoLib_DAL
 {
@@ -164,7 +165,12 @@ namespace PersoLib_DAL
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
 
                     cmd.Parameters.AddWithValue("@email", aoUsuario.USR_email);
-                    liResult = cmd.ExecuteNonQuery();
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        liResult = Convert.ToInt32(reader.GetValue(0).ToString());
+                    }
 
                     cmd.Dispose();
                     cmd.Parameters.Clear();
