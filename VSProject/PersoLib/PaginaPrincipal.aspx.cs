@@ -45,5 +45,14 @@ namespace PersoLib
                 this.lbl_mensagem_perfil.Text = "Seu perfil foi atualizado com sucesso!";
             }
         }
+
+        protected void DesativarUsuario(object sender, EventArgs e)
+        {
+            Entity.Usuario loUsuarioDesativado = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
+            loUsuarioDesativado.USR_id = (int)Session["ID_Usuario"];
+            string lsMensagem = string.Empty;
+            new Business.Usuario().DesativarUsuario(loUsuarioDesativado, out lsMensagem);
+            Response.Redirect("PaginaInicial.aspx");
+        }
     }
 }

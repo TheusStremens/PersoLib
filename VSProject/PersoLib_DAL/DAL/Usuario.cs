@@ -160,11 +160,12 @@ namespace PersoLib_DAL
                 {
                     conn.Open();
 
-                    string lsSQLQuery = "select count(*) from usr_usuario where USR_email = @email";
+                    string lsSQLQuery = "select count(*) from usr_usuario where USR_email = @email and USR_id != @id";
 
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
 
                     cmd.Parameters.AddWithValue("@email", aoUsuario.USR_email);
+                    cmd.Parameters.AddWithValue("@id", aoUsuario.USR_id);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())

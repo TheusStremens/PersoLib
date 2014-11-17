@@ -22,14 +22,16 @@ namespace PersoLib_DAL
                 bool lbValidado = true;
 
                 //Confere se o nome da pessoa é muito curto
-                if (!(Util.VerificarNome(aoUsuario.USR_nome, out lsMensagemOperacao)))
+                if (!(Util.VerificarNome(aoUsuario.USR_nome)))
                 {
+                    lsMensagemOperacao = "Nome de tamanho invalido!";
                     lbValidado = false;
                 }
 
                 // Confere se email é valido
-                if (!(Util.VerificaValidadeEmail(aoUsuario.USR_email, out lsMensagemOperacao)))
+                if (!(Util.VerificaValidadeEmail(aoUsuario.USR_email)))
                 {
+                    lsMensagemOperacao = "Formato de email incorreto!";
                     lbValidado = false;
                 }
                 //Confere se o email informa ja foi utilizado
@@ -40,14 +42,16 @@ namespace PersoLib_DAL
                 }
 
                 //Confere se tamanho da senha é valido
-                if (!(Util.VerificaTamanhoSenha(aoUsuario.USR_senha, out lsMensagemOperacao)))
+                if (!(Util.VerificaTamanhoSenha(aoUsuario.USR_senha)))
                 {
+                    lsMensagemOperacao = "A senha deve conter de 4 a 12 caracteres!";
                     lbValidado = false;
                 }
 
                 // Confere se os campos 'senha' e 'repete senha' são iguais
-                if (!(Util.VerificaIgualdadeSenha(aoUsuario.USR_senha, aoUsuario.USR_repete_senha, out lsMensagemOperacao)))
+                if (!(Util.VerificaIgualdadeSenha(aoUsuario.USR_senha, aoUsuario.USR_repete_senha)))
                 {
+                    lsMensagemOperacao = "O campo 'repete senha' deve ser igual ao 'campo senha'!";
                     lbValidado = false;
                 }
 
@@ -87,15 +91,23 @@ namespace PersoLib_DAL
                 lsMensagemOperacao = string.Empty;
                 bool lbValidado = true;
 
-                //Confere se o nome da pessoa é muito curto
-                if (!(Util.VerificarNome(aoUsuario.USR_nome, out lsMensagemOperacao)))
+                if (string.IsNullOrEmpty(aoUsuario.USR_nome) || string.IsNullOrEmpty(aoUsuario.USR_email))
                 {
+                    lsMensagemOperacao = "Os campos Nome e E-mail não podem ser vazios";
+                    lbValidado = false;
+                }
+
+                //Confere se o nome da pessoa é muito curto
+                if (!(Util.VerificarNome(aoUsuario.USR_nome)))
+                {
+                    lsMensagemOperacao = "Nome de tamanho invalido!";
                     lbValidado = false;
                 }
 
                 // Confere se email é valido
-                if (!(Util.VerificaValidadeEmail(aoUsuario.USR_email, out lsMensagemOperacao)))
+                if (!(Util.VerificaValidadeEmail(aoUsuario.USR_email)))
                 {
+                    lsMensagemOperacao = "Formato de email incorreto!";
                     lbValidado = false;
                 }
                 //Confere se o email informa ja foi utilizado
@@ -106,20 +118,17 @@ namespace PersoLib_DAL
                 }
 
                 //Confere se tamanho da senha é valido
-                if (!(Util.VerificaTamanhoSenha(aoUsuario.USR_senha, out lsMensagemOperacao)))
+                if (!string.IsNullOrWhiteSpace(aoUsuario.USR_senha) && !(Util.VerificaTamanhoSenha(aoUsuario.USR_senha)))
                 {
+                    lsMensagemOperacao = "A senha deve conter de 4 a 12 caracteres!";
                     lbValidado = false;
                 }
 
                 // Confere se os campos 'senha' e 'repete senha' são iguais
-                if (!(Util.VerificaIgualdadeSenha(aoUsuario.USR_senha, aoUsuario.USR_repete_senha, out lsMensagemOperacao)))
+                if (!(Util.VerificaIgualdadeSenha(aoUsuario.USR_senha, aoUsuario.USR_repete_senha)))
                 {
+                    lsMensagemOperacao = "O campo 'repete senha' deve ser igual ao 'campo senha'!";
                     lbValidado = false;
-                }
-
-                if (string.IsNullOrEmpty(aoUsuario.USR_nome) || string.IsNullOrEmpty(aoUsuario.USR_email))
-                {
-                    lsMensagemOperacao = "Algum campo não foi preenchido. Favor Verificar dados!";
                 }
 
                 if (lbValidado)

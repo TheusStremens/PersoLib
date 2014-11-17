@@ -211,7 +211,7 @@
                                 </div>
                                 <div class="tab-pane" id="tab_default_3">
                                     <div class="container" style="padding-top: 20px;">
-                                        <div runat="server" id="div_mensagem_perfil" visible="false" class="alert alert-danger alert-dismissible" role="alert">
+                                        <div runat="server" id="div_mensagem_perfil" visible="false" class="alert alert-info alert-dismissible" role="alert">
                                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                             <span class="sr-only"></span>
@@ -236,7 +236,7 @@
                                         </div>
                                         <asp:LinkButton class="btn btn-info" runat="server" ID="LinkButton" OnClick="AtualizarPerfil" Text="Atualizar Perfil"></asp:LinkButton>
                                         <button class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#modal_excluir_conta">
-                                            Excluir conta
+                                            Desativar conta
                                         </button>
                                     </div>
                                 </div>
@@ -369,19 +369,20 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             ×
                         </button>
-                        <h4 class="modal-title custom_align">Excluir Conta
+                        <h4 class="modal-title custom_align">Desativar Conta
                         </h4>
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-warning">
                             <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Você tem certeza
-                        que gostaria de excluir sua conta na Biblioteca Pessoal?
+                        que gostaria de desativar sua conta na Biblioteca Pessoal?
                         </div>
                     </div>
                     <div class="modal-footer ">
                         <button type="button" class="btn btn-success">
                             <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Sim
                         </button>
+                        <%--<asp:LinkButton runat="server" ID="btn_desativar_conta" OnClick="DesativarUsuario" Text="Sim" CssClass="btn btn-success" />--%>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">
                             <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Não
                         </button>
