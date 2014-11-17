@@ -99,8 +99,8 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_default_1">
                                     <div style="padding-top: 20px; padding-left: 15px;">
-                                        <button class="btn btn-success" data-toggle="modal" data-target="#modal_novo_livro">
-                                            Cadastrar novo livro</button>
+                                        <a class="btn btn-success" data-toggle="modal" data-target="#modal_novo_livro">
+                                            Cadastrar novo livro</a>
                                     </div>
                                     <div class="container" style="padding-top: 20px;">
                                         <table id="grid_livros" class="table table-striped table-bordered">
@@ -125,18 +125,18 @@
                                                     <td>2
                                                     </td>
                                                     <td>
-                                                        <button title="Editar este livro" class="btn btn-primary btn-xs" data-toggle="modal"
+                                                        <a title="Editar este livro" class="btn btn-primary btn-xs" data-toggle="modal"
                                                             data-target="#edit">
                                                             <span class="glyphicon glyphicon-pencil"></span>
-                                                        </button>
-                                                        <button title="Excluir este livro" class="btn btn-danger btn-xs" data-toggle="modal"
+                                                        </a>
+                                                        <a title="Excluir este livro" class="btn btn-danger btn-xs" data-toggle="modal"
                                                             data-target="#delete">
                                                             <span class="glyphicon glyphicon-trash"></span>
-                                                        </button>
-                                                        <button title="Empreste este livro" class="btn btn-warning btn-xs" data-toggle="modal"
+                                                        </a>
+                                                        <a title="Empreste este livro" class="btn btn-warning btn-xs" data-toggle="modal"
                                                             data-target="#modal_novo_emprestimo">
                                                             <span class="glyphicon glyphicon-new-window"></span>
-                                                        </button>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -147,18 +147,18 @@
                                                     <td>0
                                                     </td>
                                                     <td>
-                                                        <button title="Editar este livro" class="btn btn-primary btn-xs" data-toggle="modal"
+                                                        <a title="Editar este livro" class="btn btn-primary btn-xs" data-toggle="modal"
                                                             data-target="#edit">
                                                             <span class="glyphicon glyphicon-pencil"></span>
-                                                        </button>
-                                                        <button title="Excluir este livro" class="btn btn-danger btn-xs" data-toggle="modal"
+                                                        </a>
+                                                        <a title="Excluir este livro" class="btn btn-danger btn-xs" data-toggle="modal"
                                                             data-target="#delete">
                                                             <span class="glyphicon glyphicon-trash"></span>
-                                                        </button>
-                                                        <button title="Empreste este livro" class="btn btn-warning btn-xs" data-toggle="modal"
+                                                        </a>
+                                                        <a title="Empreste este livro" class="btn btn-warning btn-xs" data-toggle="modal"
                                                             data-target="#modal_novo_emprestimo">
                                                             <span class="glyphicon glyphicon-new-window"></span>
-                                                        </button>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -194,14 +194,14 @@
                                                     </td>
                                                     <td>
                                                         <span style="padding-left: 14px;">
-                                                            <button title="Alterar prazo" class="btn btn-warning btn-xs" data-toggle="modal"
+                                                            <a title="Alterar prazo" class="btn btn-warning btn-xs" data-toggle="modal"
                                                                 data-target="#modal_alterar_prazo">
                                                                 <span class="glyphicon glyphicon-calendar"></span>
-                                                            </button>
-                                                            <button title="Finalizar empréstimo" class="btn btn-success btn-xs" data-toggle="modal"
+                                                            </a>
+                                                            <a title="Finalizar empréstimo" class="btn btn-success btn-xs" data-toggle="modal"
                                                                 data-target="#modal_finalizar_emprestimo">
                                                                 <span class="glyphicon glyphicon-ok"></span>
-                                                            </button>
+                                                            </a>
                                                         </span>
                                                     </td>
                                                 </tr>
@@ -235,9 +235,9 @@
                                             <input runat="server" id="txt_nova_senha_confirmacao" class="form-control " type="password" maxlength="20" placeholder="">
                                         </div>
                                         <asp:LinkButton class="btn btn-info" runat="server" ID="LinkButton" OnClick="AtualizarPerfil" Text="Atualizar Perfil"></asp:LinkButton>
-                                        <button class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#modal_excluir_conta">
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_excluir_conta">
                                             Desativar conta
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -379,10 +379,10 @@
                         </div>
                     </div>
                     <div class="modal-footer ">
-                        <button type="button" class="btn btn-success">
+                        <%--<button type="button" class="btn btn-success">
                             <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Sim
-                        </button>
-                        <%--<asp:LinkButton runat="server" ID="btn_desativar_conta" OnClick="DesativarUsuario" Text="Sim" CssClass="btn btn-success" />--%>
+                        </button>--%>
+                        <asp:LinkButton runat="server" ID="btn_desativar_conta" OnClick="DesativarUsuario" Text="Sim" CssClass="btn btn-success" />
                         <button type="button" class="btn btn-danger" data-dismiss="modal">
                             <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Não
                         </button>
