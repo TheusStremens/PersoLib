@@ -1,9 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PaginaPrincipal.aspx.cs" Inherits="PersoLib.PaginaPrincipal" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
     <meta charset="utf-8">
     <title>PersoLib- Biblioteca Pessoal</title>
     <link rel="shortcut icon" href="assets/ico/favicon.png">
@@ -15,10 +12,12 @@
     <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
+    <!--<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>-->
     <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="assets/js/dataTables.bootstrap.js"></script>
     <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <!--<script src="assets/js/jquery.min.js"></script>-->
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/retina.js"></script>
     <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
@@ -68,9 +67,15 @@
         rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet'
         type='text/css'>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
     <div id="navbar-main">
+        <!-- Fixed navbar -->
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -91,6 +96,7 @@
                         </li>
                     </ul>
                 </div>
+                <!--/.nav-collapse -->
             </div>
         </div>
     </div>
@@ -238,24 +244,29 @@
                                         <h4>
                                             Nome
                                         </h4>
-                                        <input runat="server" id="txt_nome" class="form-control" type="text" maxlength="50" placeholder="">
+                                        <input class="form-control" type="text" maxlength="50" placeholder="Matheus Magalhães Batista dos Santos">
                                     </div>
                                     <div class="form-group">
                                         <h4>
                                             E-mail</h4>
-                                        <input runat="server" id="txt_email" class="form-control " type="text" maxlength="50" placeholder="">
+                                        <input class="form-control " type="text" maxlength="50" placeholder="matheus@magalhaes.com">
                                     </div>
                                     <div class="form-group">
                                         <h4>
-                                            Nova Senha</h4>
-                                        <input runat="server" id="txt_nova_senha" class="form-control " type="password" maxlength="20" placeholder="">
+                                            Senha</h4>
+                                        <input class="form-control " type="password" maxlength="20" placeholder="***********">
                                     </div>
                                     <div class="form-group">
                                         <h4>
-                                            Confirme a nova senha</h4>
-                                        <input runat="server" id="txt_nova_senha_confirmacao" class="form-control " type="password" maxlength="20" placeholder="">
+                                            Confirme a senha</h4>
+                                        <input class="form-control " type="password" maxlength="20" placeholder="***********">
                                     </div>
-                                    <button class="btn btn-info" runat="server" id="btn_atualizar_perfil" onclick="AtualizarPerfil">
+                                    <div class="form-group">
+                                        <h4>
+                                            Telefone</h4>
+                                        <input class="form-control " type="password" maxlength="10" placeholder="99522656">
+                                    </div>
+                                    <button class="btn btn-info" data-toggle="modal" data-dismiss="modal" data-target="#modal_atualizar_perfil">
                                         Atualizar Perfil
                                     </button>
                                     <button class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#modal_excluir_conta">
@@ -412,6 +423,32 @@
                     </button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">
                         <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Não
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal_atualizar_perfil" tabindex="-1" role="dialog" aria-labelledby="edit"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title custom_align">
+                        Atualizar
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Seu perfil foi
+                        atualizado com sucesso!
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Ok
                     </button>
                 </div>
             </div>

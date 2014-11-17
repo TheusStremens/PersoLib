@@ -82,7 +82,7 @@ namespace PersoLib_DAL
                 return ID;
             }
 
-            public bool AlterarUsuaio(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public bool AlterarUsuario(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 bool lbValidado = true;

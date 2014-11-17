@@ -40,6 +40,15 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_nova_senha;
         
         /// <summary>
+        /// txt_nova_senha_confirmacao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_nova_senha_confirmacao;
+        
+        /// <summary>
         /// btn_atualizar_perfil control.
         /// </summary>
         /// <remarks>

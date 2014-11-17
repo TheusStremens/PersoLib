@@ -28,7 +28,18 @@ namespace PersoLib
 
         protected void AtualizarPerfil(object sender, EventArgs e)
         {
+            try
+            {
 
+                Entity.Usuario loAlterarUsuario = new Entity.Usuario(this.txt_email.Value.ToString(), this.txt_nome.Value.ToString(), this.txt_nova_senha.Value.ToString(), this.txt_nova_senha_confirmacao.Value.ToString());
+                string lsMensagemOperacao = string.Empty;
+                new Business.Usuario().AlterarUsuario(loAlterarUsuario, out lsMensagemOperacao);
+   
+            }
+            catch
+            {
+
+            }
         }
     }
 }
