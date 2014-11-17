@@ -7,15 +7,13 @@ namespace PersoLib_DAL
     {
         public class Usuario
         {
-            public bool VerificaExistenciaEmail(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public bool VerificaExistenciaEmail(Entity.Usuario aoUsuario)
             {
-                lsMensagemOperacao = string.Empty;
-                if (new DAL.Usuario().ExisteUsuarioEmail(aoUsuario) != 1)
+                if (new DAL.Usuario().ExisteUsuarioEmail(aoUsuario) == 1)
                 {
-                    lsMensagemOperacao = "Email esta errado ou não existe cadastro!";
-                    return false;
+                    return true;
                 }
-                return true;
+                return false;
             }
 
             public bool InserirNovoUsuario(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
@@ -35,8 +33,9 @@ namespace PersoLib_DAL
                     lbValidado = false;
                 }
                 //Confere se o email informa ja foi utilizado
-                if (!(VerificaExistenciaEmail(aoUsuario, out lsMensagemOperacao)))
+                if (VerificaExistenciaEmail(aoUsuario))
                 {
+                    lsMensagemOperacao = "Ja existe um usuario com este e-mail!";
                     lbValidado = false;
                 }
 
@@ -69,8 +68,9 @@ namespace PersoLib_DAL
             {
                 lsMensagemOperacao = string.Empty;
                 int ID = -1;
-                if (!(VerificaExistenciaEmail(aoUsuario, out lsMensagemOperacao)))
+                if (!(VerificaExistenciaEmail(aoUsuario)))
                 {
+                    lsMensagemOperacao = "Não existe usuario com este e-mail!";
                     return ID;
                 }
                 else if (new DAL.Usuario().LoginUsuario(aoUsuario) == -1)
@@ -99,8 +99,9 @@ namespace PersoLib_DAL
                     lbValidado = false;
                 }
                 //Confere se o email informa ja foi utilizado
-                if (!(VerificaExistenciaEmail(aoUsuario, out lsMensagemOperacao)))
+                if (VerificaExistenciaEmail(aoUsuario))
                 {
+                    lsMensagemOperacao = "Ja existe um usuario com este e-mail!";
                     lbValidado = false;
                 }
 

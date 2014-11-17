@@ -13,6 +13,33 @@ namespace PersoLib {
     public partial class PaginaPrincipal {
         
         /// <summary>
+        /// form_body control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form_body;
+        
+        /// <summary>
+        /// div_mensagem_perfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_mensagem_perfil;
+        
+        /// <summary>
+        /// lbl_mensagem_perfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_mensagem_perfil;
+        
+        /// <summary>
         /// txt_nome control.
         /// </summary>
         /// <remarks>
@@ -49,12 +76,12 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_nova_senha_confirmacao;
         
         /// <summary>
-        /// btn_atualizar_perfil control.
+        /// LinkButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btn_atualizar_perfil;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton;
     }
 }

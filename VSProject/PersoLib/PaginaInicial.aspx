@@ -148,7 +148,6 @@
             <div class="modal-dialog">
                 <div runat="server" class="modal-content">
                     <div class="modal-header">                        
-                        </button>
                         <div runat="server" id="div_mensagem_modal" visible="false" class="alert alert-danger alert-dismissible" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
