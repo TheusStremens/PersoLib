@@ -36,6 +36,36 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        function selecionar_aba(aba) {               
+            $.ajax({
+                type: "POST",
+                url: window.location.href + "/selecao_aba",
+                data: "{codigo: '" + aba + "'}",
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+                    if (aba == "aba1") {
+                        $("#div_aba1").tab("show");
+                        $("#li_aba1").addClass("active");
+                        $("#li_aba2").removeClass("active");
+                        $("#li_aba3").removeClass("active");
+                    } else if (aba == "aba2") {
+                        $("#div_aba2").tab("show");
+                        $("#li_aba1").removeClass("active");
+                        $("#li_aba2").addClass("active");
+                        $("#li_aba3").removeClass("active");
+                    } else if (aba == "aba3") {
+                        $("#div_aba3").tab("show");
+                        $("#li_aba1").removeClass("active");
+                        $("#li_aba2").removeClass("active");
+                        $("#li_aba3").addClass("active");
+                    }
+                }
+            });
+        }
+    </script>
     <style type="text/css">
         .login {
             padding-top: 7px;
@@ -76,12 +106,12 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="#tab_default_1" data-toggle="tab" class="smoothScroll">Meus Livros</a></li>
-                            <li><a href="#tab_default_2" data-toggle="tab" class="smoothScroll">Meus Emprestimos</a></li>
-                            <li><a href="#tab_default_3" data-toggle="tab" class="smoothScroll">Meu Perfil</a></li>
+                            <li runat="server" id="li_aba1" class="active"><a href="" class="smoothScroll" onclick="selecionar_aba('aba1');">Meus Livros</a></li>
+                            <li runat="server" id="li_aba2"><a href="" class="smoothScroll" onclick="selecionar_aba('aba2');">Meus Emprestimos</a></li>
+                            <li runat="server" id="li_aba3"><a href="" class="smoothScroll" onclick="selecionar_aba('aba3');">Meu Perfil</a></li>
                             <li>
                                 <div class="col-lg-2 login">
-                                    <a href="pagina1.html" id="btn_login" class="btn btn-danger login">Fazer Logout
+                                    <a href="PaginaInicial.aspx" id="btn_login" class="btn btn-danger login">Fazer Logout
                                     </a>
                                 </div>
                             </li>
@@ -97,10 +127,9 @@
                     <div class="tabbable-panel">
                         <div class="tabbable-line">
                             <div class="tab-content">
-                                <div class="tab-pane active" id="tab_default_1">
+                                <div class="tab-pane fade in active" runat="server" id="div_aba1">
                                     <div style="padding-top: 20px; padding-left: 15px;">
-                                        <a class="btn btn-success" data-toggle="modal" data-target="#modal_novo_livro">
-                                            Cadastrar novo livro</a>
+                                        <a class="btn btn-success" data-toggle="modal" data-target="#modal_novo_livro">Cadastrar novo livro</a>
                                     </div>
                                     <div class="container" style="padding-top: 20px;">
                                         <table id="grid_livros" class="table table-striped table-bordered">
@@ -165,7 +194,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab_default_2">
+                                <div class="tab-pane fade" id="div_aba2" runat="server">
                                     <div class="container" style="padding-top: 20px;">
                                         <table id="grid_emprestimos" class="table table-striped table-bordered">
                                             <thead>
@@ -209,7 +238,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab_default_3">
+                                <div class="tab-pane fade" id="div_aba3" runat="server">
                                     <div class="container" style="padding-top: 20px;">
                                         <div runat="server" id="div_mensagem_perfil" visible="false" class="alert alert-info alert-dismissible" role="alert">
                                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -235,8 +264,7 @@
                                             <input runat="server" id="txt_nova_senha_confirmacao" class="form-control " type="password" maxlength="20" placeholder="">
                                         </div>
                                         <asp:LinkButton class="btn btn-info" runat="server" ID="LinkButton" OnClick="AtualizarPerfil" Text="Atualizar Perfil"></asp:LinkButton>
-                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_excluir_conta">
-                                            Desativar conta
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_excluir_conta">Desativar conta
                                         </a>
                                     </div>
                                 </div>
@@ -374,7 +402,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-warning">
-                            <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Você tem certeza
+                            <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;Caso deseje reativar sua conta, 
+                            basta fazer o login na página inicial e sua conta será reativada automaticamente. Você tem certeza
                         que gostaria de desativar sua conta na Biblioteca Pessoal?
                         </div>
                     </div>
