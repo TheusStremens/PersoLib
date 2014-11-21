@@ -25,18 +25,13 @@ CREATE TABLE IF NOT EXISTS `PersoLib`.`USR_Usuario` (
   `USR_email` VARCHAR(45) NOT NULL,
   `USR_nome` VARCHAR(45) NOT NULL,
   `USR_senha` VARCHAR(45) NOT NULL,
+  `USR_ativo` TINYINT(1) NOT NULL,
   PRIMARY KEY (`USR_id`),
   UNIQUE INDEX `USR_id_UNIQUE` (`USR_id` ASC),
   UNIQUE INDEX `USR_email_UNIQUE` (`USR_email` ASC))
 ENGINE = InnoDB;
 
-CREATE USER 'persolib_adm' IDENTIFIED BY 'adm';
 
-GRANT ALL ON `PersoLib`.* TO 'persolib_adm';
-GRANT SELECT ON TABLE `PersoLib`.* TO 'persolib_adm';
-GRANT SELECT, INSERT, TRIGGER ON TABLE `PersoLib`.* TO 'persolib_adm';
-GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE `PersoLib`.* TO 'persolib_adm';
-GRANT EXECUTE ON ROUTINE `PersoLib`.* TO 'persolib_adm';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
