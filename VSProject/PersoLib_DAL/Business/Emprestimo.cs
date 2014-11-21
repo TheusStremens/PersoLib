@@ -83,14 +83,14 @@ namespace PersoLib_DAL
                 lsMensagemOperacao = string.Empty;
               
                 List<Entity.Emprestimo> loEmprestimo = new DAL.Emprestimo().ObterDadosEmprestimos(aoUsuario.USR_id);
-                if (loEmprestimo.Count == 0)
-                {
-                    lsMensagemOperacao = "Voce não realizou empréstimos.";
-                }
+                if(loEmprestimo == null)
+                        lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
+
                 else
                 {
-                    if(loEmprestimo == null)
-                        lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
+                    if (loEmprestimo.Count == 0)                
+                        lsMensagemOperacao = "Voce não realizou empréstimos.";
+                
                 }
                 return loEmprestimo;
             }

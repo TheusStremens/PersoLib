@@ -55,7 +55,14 @@ namespace PersoLib_DAL
             return true;
         }
 
-       
+       public static bool VerificaData(DateTime date_d)
+       {
+            if ((d.Date.CompareTo(DateTime.Now.Date)<=0))
+            {
+                return false;
+            }
+            return true;
+       }
 
     }
 }
