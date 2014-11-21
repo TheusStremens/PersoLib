@@ -46,6 +46,15 @@ namespace PersoLib_DAL
             return true;
         }
 
+        public static bool VerificarQuantidade(int int_Qtde)
+        {
+            if (int_Qtde < 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
        
 
     }

@@ -21,7 +21,7 @@ namespace PersoLib_DAL
                 lsMensagemOperacao = string.Empty;
                 bool lbValidado = true;
 
-                //Confere se o nome da pessoa é muito curto
+                // Confere se o nome da pessoa é muito curto
                 if (!(Util.VerificarNome(aoUsuario.USR_nome)))
                 {
                     lsMensagemOperacao = "Nome de tamanho invalido!";
@@ -66,7 +66,6 @@ namespace PersoLib_DAL
 
                 return lbValidado;
             }
-
 
             public int VerificarLogin(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {
