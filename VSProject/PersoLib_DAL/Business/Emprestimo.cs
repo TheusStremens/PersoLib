@@ -5,15 +5,7 @@ namespace PersoLib_DAL
     {
         public class Emprestimo
         {
-            public bool VerificaData(Entity.Emprestimo aoEmprestimo)
-            {
-                if (new DAL.Emprestimo().Datavalida(aoEmprestimo) == 1)
-                {
-                    return true;
-                }
-                return false;
-            }
-            
+                       
             public bool InserirNovoEmprestimo(Entity.Emprestimo aoEmprestimo, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
@@ -96,10 +88,10 @@ namespace PersoLib_DAL
             }
             
             //Finaliza um emprestimo usando id do usuario e do emprestimo
-            public bool RealizaDevolucao(Entity.Usuario aoUsuario, Entity.Emprestimo aoEmprestimo,out string lsMensagemOperacao)
+            public bool RealizaDevolucao(Entity.Emprestimo aoEmprestimo,out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
-                if (new DAL.Emprestimo().ConcluiEMprestimo(aoUsuario, aoEmprestimo) == -1)
+                if (new DAL.Emprestimo().ConcluiEMprestimo(aoEmprestimo) == -1)
                 {
                     lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
                     return false;

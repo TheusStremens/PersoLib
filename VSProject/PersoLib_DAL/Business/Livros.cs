@@ -37,7 +37,7 @@ namespace PersoLib_DAL
                 }
 
                 // Confere se o nome do livro já existe
-                if (Util.VerificarLivroExistente(aoLivros))
+                if (VerificarLivroExistente(aoLivros))
                 {
                     lsMensagemOperacao = "Livro com este nome já existe!";
                     lbValidado = false;
