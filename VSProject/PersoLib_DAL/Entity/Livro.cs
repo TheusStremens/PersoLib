@@ -15,10 +15,10 @@ namespace PersoLib_DAL
             public int LVR_disponivel { set; get; }
             public int LVR_id_usuario { set; get; }
 
-            public Livro(string aLVR_nome, int aLVR_disponivel, int aLVR_emprestado, int aLVR_id_usuario)
+            public Livro(string aLVR_nome, int aLVR_disponivel, int aLVR_id_usuario)
             {
                 this.LVR_nome = aLVR_nome;
-                this.LVR_emprestado = aLVR_emprestado;
+                this.LVR_emprestado = 0;
                 this.LVR_disponivel = aLVR_disponivel;
                 this.LVR_id_usuario = aLVR_id_usuario;
             }

@@ -6,7 +6,7 @@ namespace PersoLib_DAL
         public class Emprestimo
         {
                        
-            public bool InserirNovoEmprestimo(Entity.Emprestimo aoEmprestimo, out string lsMensagemOperacao)
+            public bool InserirNovoEmprestimo(Entity.Livro aoLivro, Entity.Emprestimo aoEmprestimo, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 bool lbValidado = true;
@@ -25,7 +25,7 @@ namespace PersoLib_DAL
                     lbValidado = false;
                 }
                 //Confere se a data é valida
-                if (Util.VerificaData(aoEmprestimo))
+                if (!Util.VerificaData(aoEmprestimo.EMP_devolucao))
                 {
                     lsMensagemOperacao = "A data não pode ser anterior ao dia atual";
                     lbValidado = false;
@@ -33,7 +33,7 @@ namespace PersoLib_DAL
                 
                 if (lbValidado)
                 {
-                    if (new DAL.Emprestimo().InserirNovoEmprestimo(aoEmprestimo) != 1)
+                    if (new DAL.Emprestimo().RealizarEmprestimo(aoLivro, aoEmprestimo) != 1)
                     {
                         lsMensagemOperacao = "Ocorreu um erro no servidor. Tente novamente mais tarde!";
                         lbValidado = false;
@@ -51,7 +51,7 @@ namespace PersoLib_DAL
                 bool lbValidado = true;
 
                 //Confere se a data é valida
-                if (Util.VerificaData(aoEmprestimo))
+                if (!Util.VerificaData(aoEmprestimo.EMP_devolucao))
                 {
                     lsMensagemOperacao = "A data não pode ser anterior ao dia atual";
                     lbValidado = false;
@@ -59,7 +59,7 @@ namespace PersoLib_DAL
 
                 if (lbValidado)
                 {
-                    if (new DAL.Emprestimo().AtualizarDataEmprestimo(aoEmprestimo) == -1)
+                    if (new DAL.Emprestimo().AtualizarPrazoEmprestimo(aoEmprestimo) == -1)
                     {
                         lsMensagemOperacao = "Ocorreu algum erro no servidor!";
                         lbValidado = false;
@@ -74,7 +74,7 @@ namespace PersoLib_DAL
             {
                 lsMensagemOperacao = string.Empty;
               
-                List<Entity.Emprestimo> loEmprestimo = new DAL.Emprestimo().ObterDadosEmprestimos(aoUsuario.USR_id);
+                List<Entity.Emprestimo> loEmprestimo = new DAL.Emprestimo().CarregarEmprestimosUsuario(aoUsuario.USR_id);
                 if(loEmprestimo == null)
                         lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
 
@@ -88,10 +88,10 @@ namespace PersoLib_DAL
             }
             
             //Finaliza um emprestimo usando id do usuario e do emprestimo
-            public bool RealizaDevolucao(Entity.Emprestimo aoEmprestimo,out string lsMensagemOperacao)
+            public bool RealizaDevolucao(Entity.Livro aoLivro, Entity.Emprestimo aoEmprestimo,out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
-                if (new DAL.Emprestimo().ConcluiEMprestimo(aoEmprestimo) == -1)
+                if (new DAL.Emprestimo().DevolverEmprestimo(aoLivro, aoEmprestimo) == -1)
                 {
                     lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
                     return false;
