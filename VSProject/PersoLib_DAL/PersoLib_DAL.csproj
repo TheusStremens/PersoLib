@@ -44,10 +44,11 @@
     <Compile Include="Business\Emprestimo.cs" />
     <Compile Include="Business\Livro.cs" />
     <Compile Include="Business\Usuario.cs" />
-    <Compile Include="DAL\Livros.cs" />
+    <Compile Include="DAL\Emprestimo.cs" />
+    <Compile Include="DAL\Livro.cs" />
     <Compile Include="DAL\Usuario.cs" />
     <Compile Include="Entity\Emprestimo.cs" />
-    <Compile Include="Entity\Livros.cs" />
+    <Compile Include="Entity\Livro.cs" />
     <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />

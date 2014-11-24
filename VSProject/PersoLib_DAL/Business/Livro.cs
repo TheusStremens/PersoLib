@@ -3,28 +3,28 @@ namespace PersoLib_DAL
 {
     public static partial class Business
     {
-        public class Livros
+        public class Livro
         {
 
-            public bool VerificarLivroExistente(Entity.Livros aoLivros)
+            public bool VerificarLivroExistente(Entity.Livro aoLivros)
             {
-                if (new DAL.Livros().ExisteLivro(aoLivros.LVR_nome) == 1)
+                if (new DAL.Livro().ExisteLivro(aoLivros.LVR_nome) == 1)
                 {
                     return true;
                 }
                 return false;
             }
 
-            public bool VerificarLivroExistenteAlterar(Entity.Livros aoLivros)
+            public bool VerificarLivroExistenteAlterar(Entity.Livro aoLivros)
             {
-                if (new DAL.Livros().ExisteLivroAlterar(aoLivros.LVR_nome, aoLivros.LVR_id) == 1)
+                if (new DAL.Livro().ExisteLivroAlterar(aoLivros.LVR_nome, aoLivros.LVR_id) == 1)
                 {
                     return true;
                 }
                 return false;
             }
 
-            public bool InserirNovoLivro(Entity.Livros aoLivros, out string lsMensagemOperacao)
+            public bool InserirNovoLivro(Entity.Livro aoLivros, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 bool lbValidado = true;
@@ -45,7 +45,7 @@ namespace PersoLib_DAL
 
                 if (lbValidado)
                 {
-                    if (new DAL.Livros().InserirNovoLivro(aoLivros) != 1)
+                    if (new DAL.Livro().InserirNovoLivro(aoLivros) != 1)
                     {
                         lsMensagemOperacao = "Ocorreu um erro no servidor. Tente novamente mais tarde!";
                         lbValidado = false;
@@ -56,7 +56,7 @@ namespace PersoLib_DAL
 
             }
 
-            public bool AlterarLivro(Entity.Livros aoLivros, out string lsMensagemOperacao)
+            public bool AlterarLivro(Entity.Livro aoLivros, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
                 bool lbValidado = true;
@@ -87,7 +87,7 @@ namespace PersoLib_DAL
 
                 if (lbValidado)
                 {
-                    if (new DAL.Livros().AtualizarDadosLivro(aoLivros) == -1)
+                    if (new DAL.Livro().AtualizarDadosLivro(aoLivros) == -1)
                     {
                         lsMensagemOperacao = "Ocorreu algum erro no servidor!";
                         lbValidado = false;
@@ -97,11 +97,11 @@ namespace PersoLib_DAL
                 return lbValidado;
             }
 
-            public bool RemoverLivro(Entity.Livros aoLivros, out string lsMensagemOperacao)
+            public bool RemoverLivro(Entity.Livro aoLivros, out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
 
-                if (new DAL.Livros().RemoverLivro(aoLivros) == -1)
+                if (new DAL.Livro().RemoverLivro(aoLivros) == -1)
                 {
                     lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
                     return false;
@@ -109,11 +109,11 @@ namespace PersoLib_DAL
                 return true;
             }
 
-            public bool EmprestarLivro(Entity.Livros aoLivros, out string lsmensagemOperacao)
+            public bool EmprestarLivro(Entity.Livro aoLivros, out string lsmensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
 
-                if (new DAL.Livros().EmprestarLivro(aoLivros) == -1)
+                if (new DAL.Livro().EmprestarLivro(aoLivros) == -1)
                 {
                     lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
                     return false;
