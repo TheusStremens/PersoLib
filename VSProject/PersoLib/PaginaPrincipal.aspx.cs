@@ -118,5 +118,51 @@ namespace PersoLib
             new Business.Usuario().DesativarUsuario(loUsuarioDesativado, out lsMensagem);
             Response.Redirect("PaginaInicial.aspx");
         }
+
+        //Theus da uma olhada nisso e me fala se ta correto
+        protected void CadastrarLivro(object sender, EventArgs e)
+        {  
+            Entity.Usuario loUsuarioLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
+            loUsuarioLivro.USR_id = (int)Session["ID_Usuario"];
+            
+            Entity.Livro loNovoLivro = new Entity.Livro(this.txt_nome_livro.Value.ToString(), Convert.ToInt32(this.txt_livro_quantidade), (Convert.ToInt32(this.txt_livro_quantidade)-Convert.ToInt32(this.txt_livro_quantidade)), loUsuarioLivro.USR_id);
+            string lsMensagemOperacao = string.Empty;
+
+            if (! new Business.Livro().InserirNovoLivro(loNovoLivro, loUsuarioLivro, out lsMensagemOperacao))
+            {
+               this.div_mensagem_livro.Visible = true;
+               this.lbl_mensagem_livro.Text = lsMensagemOperacao;
+            }
+            else
+            {
+               this.div_mensagem_livro.Visible = true;
+               this.lbl_mensagem_livro.Text = "Seu livro foi cadastrado com sucesso!";               
+            }
+        }
+
+
+        protected void AtualizarLivro(object sender, EventArgs e)
+        {
+            Entity.Usuario loUsuarioAlterarLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
+            loUsuarioAlterarLivro.USR_id = (int)Session["ID_Usuario"];                     
+            Entity.Livro loAlterarLivro = new Entity.Livro(this.txt_nome_livro.Value.ToString(), Convert.ToInt32(this.txt_livro_quantidade), (Convert.ToInt32(this.txt_livro_quantidade)-Convert.ToInt32(this.txt_livro_quantidade)), loUsuarioLivro.USR_id);
+            string lsMensagemOperacao = string.Empty;
+            if (!new Business.Livro().AlterarLivro(loAlterarLivro, out lsMensagemOperacao)){
+                this.div_msg_alterar_livro.Visible = true;
+                this.lbl_msg_alterar_livro.Text = lsMensagemOperacao;
+            }
+            else
+            {
+                this.div_msg_alterar_livro.Visible = true;
+                this.lbl_msg_alterar_livro.Text = "Seu livro foi alterado com sucesso!";               
+            }
+        }
+           
+    
     }
+           
+      
 }
+
+
+    

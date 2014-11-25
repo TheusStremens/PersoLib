@@ -290,11 +290,17 @@
                         <h4 class="modal-title custom_align" id="H1">Cadastre seu Livro</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
-                            <input class="form-control " type="text" placeholder="Nome do Livro">
+                        <div runat="server" id="div_mensagem_livro" visible="false" class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                            <asp:Label runat="server" ID="lbl_mensagem_livro" Text=""> </asp:Label>
                         </div>
                         <div class="form-group">
-                            <input class="form-control " type="text" placeholder="Quantidade">
+                            <input runat="server" id="txt_nome_livro" class="form-control " type="text" placeholder="Nome do Livro">
+                        </div>
+                        <div class="form-group">
+                            <input runat="server" id="txt_livro_quantidade" class="form-control " type="text" placeholder="Quantidade">
                         </div>
                     </div>
                     <div class="modal-footer ">
@@ -314,6 +320,12 @@
                         <h4 class="modal-title custom_align">Editando...</h4>
                     </div>
                     <div class="modal-body">
+                        <div runat="server" id="div_msg_alterar_livro" visible="false" class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                            <asp:Label runat="server" ID="lbl_msg_alterar_livro" Text=""> </asp:Label>
+                        </div>
                         <div class="form-group">
                             <input class="form-control " type="text" placeholder="Nome do Livro">
                         </div>

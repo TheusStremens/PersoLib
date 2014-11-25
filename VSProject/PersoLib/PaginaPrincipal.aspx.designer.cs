@@ -139,6 +139,60 @@ namespace PersoLib {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton;
         
         /// <summary>
+        /// div_mensagem_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_mensagem_livro;
+        
+        /// <summary>
+        /// lbl_mensagem_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_mensagem_livro;
+        
+        /// <summary>
+        /// txt_nome_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_nome_livro;
+        
+        /// <summary>
+        /// txt_livro_quantidade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_livro_quantidade;
+        
+        /// <summary>
+        /// div_msg_alterar_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_msg_alterar_livro;
+        
+        /// <summary>
+        /// lbl_msg_alterar_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_msg_alterar_livro;
+        
+        /// <summary>
         /// btn_desativar_conta control.
         /// </summary>
         /// <remarks>
