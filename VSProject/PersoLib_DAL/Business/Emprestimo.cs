@@ -59,7 +59,7 @@ namespace PersoLib_DAL
 
                 if (lbValidado)
                 {
-                    if (new DAL.Emprestimo().AtualizarPrazoEmprestimo(aoEmprestimo) == -1)
+                    if (new DAL.Emprestimo().AlterarPrazoEmprestimo(aoEmprestimo) == -1)
                     {
                         lsMensagemOperacao = "Ocorreu algum erro no servidor!";
                         lbValidado = false;

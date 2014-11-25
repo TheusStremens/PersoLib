@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersoLib_DAL.DAL
+namespace PersoLib_DAL
 {
     internal static partial class DAL
     {
