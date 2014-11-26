@@ -125,7 +125,7 @@ namespace PersoLib
             Entity.Usuario loUsuarioLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
             loUsuarioLivro.USR_id = (int)Session["ID_Usuario"];
             
-            Entity.Livro loNovoLivro = new Entity.Livro(this.txt_nome_livro.Value.ToString(), Convert.ToInt32(this.txt_livro_quantidade), (Convert.ToInt32(this.txt_livro_quantidade)-Convert.ToInt32(this.txt_livro_quantidade)), loUsuarioLivro.USR_id);
+            Entity.Livro loNovoLivro = new Entity.Livro(this.txt_nome_livro.Value.ToString(), Convert.ToInt32(this.txt_livro_quantidade), 0, loUsuarioLivro.USR_id);
             string lsMensagemOperacao = string.Empty;
 
             if (! new Business.Livro().InserirNovoLivro(loNovoLivro, loUsuarioLivro, out lsMensagemOperacao))
@@ -143,8 +143,8 @@ namespace PersoLib
         protected void AtualizarLivro(object sender, EventArgs e)
         {
             Entity.Usuario loUsuarioAlterarLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
-            loUsuarioAlterarLivro.USR_id = (int)Session["ID_Usuario"];                     
-            Entity.Livro loAlterarLivro = new Entity.Livro(this.txt_nome_livro.Value.ToString(), Convert.ToInt32(this.txt_livro_quantidade), (Convert.ToInt32(this.txt_livro_quantidade)-Convert.ToInt32(this.txt_livro_quantidade)), loUsuarioLivro.USR_id);
+            loUsuarioAlterarLivro.USR_id = (int)Session["ID_Usuario"];
+            Entity.Livro loAlterarLivro = new Entity.Livro(this.txt_nome_livro.Value.ToString(), Convert.ToInt32(this.txt_livro_quantidade), (Convert.ToInt32(this.txt_livro_quantidade) - Convert.ToInt32(this.txt_livro_quantidade)), loUsuarioAlterarLivro.USR_id);
             string lsMensagemOperacao = string.Empty;
             if (!new Business.Livro().AlterarLivro(loAlterarLivro, out lsMensagemOperacao)){
                 this.div_msg_alterar_livro.Visible = true;
