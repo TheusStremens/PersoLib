@@ -352,17 +352,23 @@
                         </h4>
                     </div>
                     <div class="modal-body">
+                        <div runat="server" id="div_msg_emprestimo" visible="false" class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                            <asp:Label runat="server" ID="lbl_emprestimo" Text=""> </asp:Label>
+                        </div>
                         <div class="form-group">
                             <input class="form-control" disabled type="text" placeholder="O Símbolo Perdido">
                         </div>
                         <div class="form-group">
-                            <input class="form-control " type="text" placeholder="Nome do Emprestante">
+                            <input runat="server" ID="txt_nome_emprestante" class="form-control " type="text" placeholder="Nome do Emprestante">
                         </div>
                         <div class="form-group">
-                            <input class="form-control " type="text" placeholder="E-mail do Emprestante">
+                            <input runat="server" ID="txt_email_emprestante" class="form-control " type="text" placeholder="E-mail do Emprestante">
                         </div>
                         <div class="form-group">
-                            <input id="txt_nova_data" maxlength="10" class="form-control" data-mask="99/99/9999"
+                            <input runat="server" id="txt_nova_data" maxlength="10" class="form-control" data-mask="99/99/9999"
                                 type="text" placeholder="Data de Devolução">
                         </div>
                     </div>

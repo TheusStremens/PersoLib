@@ -193,6 +193,51 @@ namespace PersoLib {
         protected global::System.Web.UI.WebControls.Label lbl_msg_alterar_livro;
         
         /// <summary>
+        /// div_msg_emprestimo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_msg_emprestimo;
+        
+        /// <summary>
+        /// lbl_emprestimo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_emprestimo;
+        
+        /// <summary>
+        /// txt_nome_emprestante control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_nome_emprestante;
+        
+        /// <summary>
+        /// txt_email_emprestante control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_email_emprestante;
+        
+        /// <summary>
+        /// txt_nova_data control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_nova_data;
+        
+        /// <summary>
         /// btn_desativar_conta control.
         /// </summary>
         /// <remarks>

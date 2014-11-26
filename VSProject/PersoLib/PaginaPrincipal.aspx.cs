@@ -119,7 +119,7 @@ namespace PersoLib
             Response.Redirect("PaginaInicial.aspx");
         }
 
-        //Theus da uma olhada nisso e me fala se ta correto
+        //Theus da uma olhada nisso, a quantidade de livro emprestada vai ser zero então eu fiz uma subtração
         protected void CadastrarLivro(object sender, EventArgs e)
         {  
             Entity.Usuario loUsuarioLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
@@ -140,7 +140,6 @@ namespace PersoLib
             }
         }
 
-
         protected void AtualizarLivro(object sender, EventArgs e)
         {
             Entity.Usuario loUsuarioAlterarLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
@@ -157,8 +156,40 @@ namespace PersoLib
                 this.lbl_msg_alterar_livro.Text = "Seu livro foi alterado com sucesso!";               
             }
         }
-           
-    
+
+        protected void ExcluirLivro(object sender, EventArgs e)
+        {
+            Entity.Usuario loUsuarioDesativadoLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
+            loUsuarioDesativadoLivro.USR_id = (int)Session["ID_Usuario"];
+            Entity.Livro loExcluirLivro = new Entity.Livro(string.Empty, Convert.ToInt32(string.Empty), (Convert.ToInt32(string.Empty) - Convert.ToInt32(string.Empty)), loUsuarioDesativadoLivro.USR_id);
+            string lsMensagem = string.Empty;
+            new Business.Livro().RemoverLivro(loExcluirLivro, out lsMensagem);
+            Response.Redirect("PaginaInicial.aspx");
+        }
+
+        protected void EmprestarLivro(object sender, EventArgs e)
+        {
+            Entity.Usuario loUsuarioEmprestimo = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
+            loUsuarioEmprestimo.USR_id = (int)Session["ID_Usuario"];
+             string lsMensagemOperacao = string.Empty;
+            Entity.Livro loLivroEmprestimo = new Entity.Livro(string.Empty, Convert.ToInt32(string.Empty), (Convert.ToInt32(string.Empty) - Convert.ToInt32(string.Empty)), loUsuarioEmprestimo.USR_id);
+
+            Entity.Emprestimo loNovoEmprestimo = new Entity.Emprestimo(loLivroEmprestimo.LVR_id, loUsuarioEmprestimo.USR_id, this.txt_nome_emprestante.Value.ToString(), this.txt_email_emprestante.Value.ToString(), Convert.ToDateTime(this.txt_nova_data.Value.ToString()));
+            if (new Business.Emprestimo().InserirNovoEmprestimo(loLivroEmprestimo, loNovoEmprestimo, out lsMensagemOperacao))
+            {
+                //adicionar
+            }
+            else
+            {
+                this.div_msg_emprestimo.Visible = true;
+                this.lbl_emprestimo.Text = lsMensagemOperacao;
+
+            }
+
+        }
+
+
+
     }
            
       
