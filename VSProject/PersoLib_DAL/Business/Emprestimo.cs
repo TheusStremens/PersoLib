@@ -43,7 +43,6 @@ namespace PersoLib_DAL
                 return lbValidado;
             }
 
-            
             //Altera o prazo de entrega do livro emprestado
             public bool AlterarPrazo(Entity.Emprestimo aoEmprestimo, out string lsMensagemOperacao)
             {
@@ -87,7 +86,7 @@ namespace PersoLib_DAL
                 return loEmprestimo;
             }
             
-            //Finaliza um emprestimo usando id do usuario e do emprestimo
+            //Finaliza um emprestimo usando ID do livro e ID do emprestimo
             public bool RealizaDevolucao(Entity.Livro aoLivro, Entity.Emprestimo aoEmprestimo,out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;

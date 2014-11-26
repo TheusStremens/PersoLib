@@ -125,13 +125,14 @@ namespace PersoLib
             Entity.Usuario loUsuarioLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
             loUsuarioLivro.USR_id = (int)Session["ID_Usuario"];
             
-            Entity.Livro loNovoLivro = new Entity.Livro(this.txt_nome_livro.Value.ToString(), Convert.ToInt32(this.txt_livro_quantidade), 0, loUsuarioLivro.USR_id);
+            Entity.Livro loNovoLivro = new Entity.Livro(this.txt_nome_livro.Value.ToString(), Convert.ToInt32(this.txt_livro_quantidade.Value.ToString()), 0, loUsuarioLivro.USR_id);
             string lsMensagemOperacao = string.Empty;
 
             if (! new Business.Livro().InserirNovoLivro(loNovoLivro, loUsuarioLivro, out lsMensagemOperacao))
             {
                this.div_mensagem_livro.Visible = true;
                this.lbl_mensagem_livro.Text = lsMensagemOperacao;
+               ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_novo_livro').modal('show'); </script>", false);
             }
             else
             {
@@ -157,6 +158,7 @@ namespace PersoLib
             }
         }
 
+        // REFAZER!
         protected void ExcluirLivro(object sender, EventArgs e)
         {
             Entity.Usuario loUsuarioDesativadoLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
@@ -189,10 +191,7 @@ namespace PersoLib
         }
 
 
-
     }
-           
-      
 }
 
 

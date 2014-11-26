@@ -175,6 +175,15 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_livro_quantidade;
         
         /// <summary>
+        /// btn_criar_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_criar_livro;
+        
+        /// <summary>
         /// div_msg_alterar_livro control.
         /// </summary>
         /// <remarks>

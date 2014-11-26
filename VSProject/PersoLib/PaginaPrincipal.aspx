@@ -304,8 +304,8 @@
                         </div>
                     </div>
                     <div class="modal-footer ">
-                        <button type="button" class="btn btn-success btn-lg" data-dismiss="modal" style="width: 100%;">
-                            <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Salvar</button>
+                        <asp:LinkButton runat="server" OnClick="CadastrarLivro" id="btn_criar_livro" class="btn btn-success btn-lg" style="width: 100%;">
+                            <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Salvar</asp:LinkButton>
                     </div>
                 </div>
             </div>
