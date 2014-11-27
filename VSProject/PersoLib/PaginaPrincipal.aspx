@@ -34,10 +34,37 @@
             $('#txt_nova_data').datepicker({
                 dateFormat: 'dd-mm-yy'
             });
+
         });
     </script>
     <script type="text/javascript">
-        function selecionar_aba(aba) {               
+        function selecionar_livro(id, acao, nome, quantidade) {            
+            $.ajax({
+                type: "POST",
+                url: window.location.href + "/selecao_livro",
+                data: "{codigo: '" + id + "'}",
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+                    if (acao == 'EDITAR') {
+                        $('#<%= txt_editar_livro_nome.ClientID %>').val(nome);
+                        $('#<%= txt_editar_livro_qtd.ClientID %>').val(quantidade);
+                        $('#edit').modal('show');
+                    }
+                    else if (acao == 'EXCLUIR') {
+                        $('#delete').modal('show');
+                    }
+                    else if (acao == 'EMPRESTAR') {
+                        $('#<%= txt_label_livro.ClientID %>').val(nome);
+                        $('#modal_novo_emprestimo').modal('show');
+                    }
+                }
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function selecionar_aba(aba) {
             $.ajax({
                 type: "POST",
                 url: window.location.href + "/selecao_aba",
@@ -96,6 +123,7 @@
 </head>
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
     <form id="form_body" runat="server">
+        <asp:button runat="server" style="visibility: hidden;" formnovalidate id="btn_selecao_livro" onclick="detalhar_livro" />
         <div id="navbar-main">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
@@ -132,7 +160,8 @@
                                         <a class="btn btn-success" data-toggle="modal" data-target="#modal_novo_livro">Cadastrar novo livro</a>
                                     </div>
                                     <div class="container" style="padding-top: 20px;">
-                                        <table id="grid_livros" class="table table-striped table-bordered">
+                                        <asp:Literal runat="server" ID="literal_grid_livros"></asp:Literal>
+                                        <table id="grid_livros" visible="false" runat="server" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th>Nome do Livro
@@ -297,14 +326,14 @@
                             <asp:Label runat="server" ID="lbl_mensagem_livro" Text=""> </asp:Label>
                         </div>
                         <div class="form-group">
-                            <input runat="server" id="txt_nome_livro" class="form-control " type="text" placeholder="Nome do Livro">
+                            <asp:TextBox runat="server" ID="txt_nome_livro" CssClass="form-control " placeholder="Nome do Livro"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <input runat="server" id="txt_livro_quantidade" class="form-control " type="text" placeholder="Quantidade">
+                            <asp:TextBox runat="server" ID="txt_livro_quantidade" CssClass="form-control " placeholder="Quantidade"></asp:TextBox>
                         </div>
                     </div>
                     <div class="modal-footer ">
-                        <asp:LinkButton runat="server" OnClick="CadastrarLivro" id="btn_criar_livro" class="btn btn-success btn-lg" style="width: 100%;">
+                        <asp:LinkButton runat="server" OnClick="CadastrarLivro" ID="btn_criar_livro" CssClass="btn btn-success btn-lg" Style="width: 100%;">
                             <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Salvar</asp:LinkButton>
                     </div>
                 </div>
@@ -327,15 +356,15 @@
                             <asp:Label runat="server" ID="lbl_msg_alterar_livro" Text=""> </asp:Label>
                         </div>
                         <div class="form-group">
-                            <input class="form-control " type="text" placeholder="Nome do Livro">
+                            <input runat="server" id="txt_editar_livro_nome" class="form-control " type="text" placeholder="Nome do Livro">
                         </div>
                         <div class="form-group">
-                            <input class="form-control " type="text" placeholder="Quantidade">
+                            <input runat="server" id="txt_editar_livro_qtd" class="form-control " type="text" placeholder="Quantidade">
                         </div>
                     </div>
                     <div class="modal-footer ">
-                        <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal" style="width: 100%;">
-                            <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Update</button>
+                        <asp:LinkButton runat="server" type="button" OnClick="AtualizarLivro" class="btn btn-warning btn-lg" style="width: 100%;">
+                            <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Update</asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -359,13 +388,13 @@
                             <asp:Label runat="server" ID="lbl_emprestimo" Text=""> </asp:Label>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" disabled type="text" placeholder="O Símbolo Perdido">
+                            <input class="form-control" runat="server" id="txt_label_livro" disabled type="text" placeholder="O Símbolo Perdido">
                         </div>
                         <div class="form-group">
-                            <input runat="server" ID="txt_nome_emprestante" class="form-control " type="text" placeholder="Nome do Emprestante">
+                            <input runat="server" id="txt_nome_emprestante" class="form-control " type="text" placeholder="Nome do Emprestante">
                         </div>
                         <div class="form-group">
-                            <input runat="server" ID="txt_email_emprestante" class="form-control " type="text" placeholder="E-mail do Emprestante">
+                            <input runat="server" id="txt_email_emprestante" class="form-control " type="text" placeholder="E-mail do Emprestante">
                         </div>
                         <div class="form-group">
                             <input runat="server" id="txt_nova_data" maxlength="10" class="form-control" data-mask="99/99/9999"
@@ -400,7 +429,7 @@
                     </div>
                     <div class="modal-footer ">
                         <button type="button" class="btn btn-success">
-                            <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Sim</button>
+                            <asp:LinkButton runat="server" ID="btn_confirmar_exclusao_livro" OnClick="ExcluirLivro" class="glyphicon glyphicon-ok-sign"></asp:LinkButton>&nbsp;&nbsp;Sim</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">
                             <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Não</button>
                     </div>

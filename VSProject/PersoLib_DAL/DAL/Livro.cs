@@ -101,7 +101,7 @@ namespace PersoLib_DAL
             internal List<Entity.Livro> CarregarLivrosUsuario(int aiIdUsuario) 
             {
                 List<Entity.Livro> loListaLivros = new List<Entity.Livro>();
-                loListaLivros = null;
+                //loListaLivros = null;
                 MySqlConnection conn = new
                 MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
                 try

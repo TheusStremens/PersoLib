@@ -101,23 +101,11 @@ namespace PersoLib_DAL
                 return true;
             }
 
-            public List<Entity.Livro> CarregarLivro(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public List<Entity.Livro> CarregarLivros(Entity.Usuario aoUsuario)
             {
-                lsMensagemOperacao = string.Empty;
-              
-                List<Entity.Livro> loLivro = new DAL.Livro().CarregarLivrosUsuario(aoUsuario.USR_id);
-                if(loLivro == null)
-                        lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
-
-                else
-                {
-                    if (loLivro.Count == 0)                
-                        lsMensagemOperacao = "Voce não realizou empréstimos.";
-                
-                }
-                return loLivro;
+                List<Entity.Livro> loListaLivros = new DAL.Livro().CarregarLivrosUsuario(aoUsuario.USR_id);
+                return loListaLivros;
             }
-
         }
     }
 }

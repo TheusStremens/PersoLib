@@ -22,6 +22,15 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlForm form_body;
         
         /// <summary>
+        /// btn_selecao_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_selecao_livro;
+        
+        /// <summary>
         /// li_aba1 control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,24 @@ namespace PersoLib {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_aba1;
+        
+        /// <summary>
+        /// literal_grid_livros control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literal_grid_livros;
+        
+        /// <summary>
+        /// grid_livros control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable grid_livros;
         
         /// <summary>
         /// div_aba2 control.
@@ -163,7 +190,7 @@ namespace PersoLib {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_nome_livro;
+        protected global::System.Web.UI.WebControls.TextBox txt_nome_livro;
         
         /// <summary>
         /// txt_livro_quantidade control.
@@ -172,7 +199,7 @@ namespace PersoLib {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_livro_quantidade;
+        protected global::System.Web.UI.WebControls.TextBox txt_livro_quantidade;
         
         /// <summary>
         /// btn_criar_livro control.
@@ -202,6 +229,24 @@ namespace PersoLib {
         protected global::System.Web.UI.WebControls.Label lbl_msg_alterar_livro;
         
         /// <summary>
+        /// txt_editar_livro_nome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_editar_livro_nome;
+        
+        /// <summary>
+        /// txt_editar_livro_qtd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_editar_livro_qtd;
+        
+        /// <summary>
         /// div_msg_emprestimo control.
         /// </summary>
         /// <remarks>
@@ -218,6 +263,15 @@ namespace PersoLib {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_emprestimo;
+        
+        /// <summary>
+        /// txt_label_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_label_livro;
         
         /// <summary>
         /// txt_nome_emprestante control.
@@ -245,6 +299,15 @@ namespace PersoLib {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_nova_data;
+        
+        /// <summary>
+        /// btn_confirmar_exclusao_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_confirmar_exclusao_livro;
         
         /// <summary>
         /// btn_desativar_conta control.
