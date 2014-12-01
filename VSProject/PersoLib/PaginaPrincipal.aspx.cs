@@ -256,12 +256,17 @@ namespace PersoLib
         // REFAZER!
         protected void ExcluirLivro(object sender, EventArgs e)
         {
+            string lsMensagem = string.Empty;
+            
             Entity.Usuario loUsuarioDesativadoLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
             loUsuarioDesativadoLivro.USR_id = (int)Session["ID_Usuario"];
             Entity.Livro loExcluirLivro = new Entity.Livro(string.Empty, Convert.ToInt32(string.Empty), (Convert.ToInt32(string.Empty) - Convert.ToInt32(string.Empty)), loUsuarioDesativadoLivro.USR_id);
             if (HttpContext.Current.Session["selecao_livro"] != null)
+            {
                 loExcluirLivro.LVR_id = Convert.ToInt32(HttpContext.Current.Session["selecao_livro"].ToString());
-            string lsMensagem = string.Empty;
+            }
+                
+            
             new Business.Livro().RemoverLivro(loExcluirLivro, out lsMensagem);
             this.PreencheGridLivrosUsuario();
         }
