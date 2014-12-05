@@ -22,11 +22,10 @@ namespace PersoLib_DAL
                 try
                 {
                     conn.Open();
-                    string lsSQLQuery = "insert into lvr_livro(lvr_id_usuario, lvr_nome, lvr_qtd_emprestada, lvr_qtd_disponivel) values(@id_usuario, @nome, 0, @disponivel)";
+                    string lsSQLQuery = "insert into lvr_livro(lvr_id_usuario, lvr_nome, lvr_emprestado) values(@id_usuario, @nome, 0)";
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
                     cmd.Parameters.AddWithValue("@id_usuario", aoUsuario.USR_id);
                     cmd.Parameters.AddWithValue("@nome", aoLivro.LVR_nome);
-                    cmd.Parameters.AddWithValue("@disponivel", aoLivro.LVR_disponivel);
                     liResult = cmd.ExecuteNonQuery();
                     cmd.Dispose();
                     cmd.Parameters.Clear();
@@ -51,11 +50,10 @@ namespace PersoLib_DAL
                 try
                 {
                     conn.Open();
-                    string lsSQLQuery = "update lvr_livro set lvr_nome = @nome, lvr_qtd_disponivel = @disponivel where lvr_id = @id_livro";
+                    string lsSQLQuery = "update lvr_livro set lvr_nome = @nome where lvr_id = @id_livro";
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
                     cmd.Parameters.AddWithValue("@id_livro", aoLivro.LVR_id);
                     cmd.Parameters.AddWithValue("@nome", aoLivro.LVR_nome);
-                    cmd.Parameters.AddWithValue("@disponivel", aoLivro.LVR_disponivel);
                     liResult = cmd.ExecuteNonQuery();
                     cmd.Dispose();
                     cmd.Parameters.Clear();
@@ -107,7 +105,7 @@ namespace PersoLib_DAL
                 try
                 {
                     conn.Open();
-                    string lsSQLQuery = "select lvr_id, lvr_nome, lvr_qtd_disponivel, lvr_qtd_emprestada from lvr_livro where lvr_id_usuario = @id_usuario";
+                    string lsSQLQuery = "select lvr_id, lvr_nome, lvr_emprestado from lvr_livro where lvr_id_usuario = @id_usuario";
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
 
                     cmd.Parameters.AddWithValue("@id_usuario", aiIdUsuario);
@@ -116,8 +114,9 @@ namespace PersoLib_DAL
 
                     while (reader.Read())
                     {
-                        Entity.Livro loLivro = new Entity.Livro((string)reader.GetValue(1), (int)reader.GetValue(2), (int)reader.GetValue(3), aiIdUsuario);
+                        Entity.Livro loLivro = new Entity.Livro((string)reader.GetValue(1), aiIdUsuario);
                         loLivro.LVR_id = (int)reader.GetValue(0);
+                        loLivro.LVR_emprestado = (bool)reader.GetValue(2);
                         loListaLivros.Add(loLivro);
                     }
 
@@ -145,12 +144,13 @@ namespace PersoLib_DAL
                 {
                     conn.Open();
 
-                    string lsSQLQuery = "select count(*) from lvr_livro where lvr_nome = @nome and lvr_id != @id_livro";
+                    string lsSQLQuery = "select count(*) from lvr_livro where lvr_nome = @nome and lvr_id != @id_livro and lvr_id_usuario = @id_usuario";
 
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
 
                     cmd.Parameters.AddWithValue("@nome", aoLivro.LVR_nome);
                     cmd.Parameters.AddWithValue("@id_livro", aoLivro.LVR_id);
+                    cmd.Parameters.AddWithValue("@id_usuario", aoLivro.LVR_id_usuario);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())

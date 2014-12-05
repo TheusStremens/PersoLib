@@ -71,12 +71,6 @@ namespace PersoLib_DAL
                     lbValidado = false;
                 }
 
-                if (!(Util.VerificarQuantidade(aoLivro.LVR_disponivel)))
-                {
-                    lsMensagemOperacao = "Quantidade de Livro inválida!";
-                    lbValidado = false;
-                }
-
                 if (lbValidado)
                 {
                     if (new DAL.Livro().AtualizarDadosLivro(aoLivro) == -1)

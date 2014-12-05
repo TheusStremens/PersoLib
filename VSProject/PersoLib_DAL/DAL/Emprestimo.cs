@@ -25,13 +25,11 @@ namespace PersoLib_DAL
                 {
                     conn.Open();
                     StringBuilder lsSQLQuery = new StringBuilder();
-                    lsSQLQuery.Append("update lvr_livro set lvr_qtd_disponivel = @disponivel, lvr_qtd_emprestada = @emprestada where lvr_id = @id_livro;");
+                    lsSQLQuery.Append("update lvr_livro set lvr_emprestado = 1 where lvr_id = @id_livro;");
                     lsSQLQuery.Append("insert into emp_emprestimo(emp_nome_emprestante, emp_email_emprestante, emp_data_devolucao, emp_id_livro, emp_id_usuario) ");
                     lsSQLQuery.Append("values(@nome_emprestante, @email_emprestante, @data_devolucao, @emp_id_livro, @emp_id_usuario)");
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery.ToString(), conn);
                     cmd.Parameters.AddWithValue("@id_livro", aoLivro.LVR_id);
-                    cmd.Parameters.AddWithValue("@emprestada", aoLivro.LVR_emprestado + 1);
-                    cmd.Parameters.AddWithValue("@disponivel", aoLivro.LVR_disponivel - 1);
                     cmd.Parameters.AddWithValue("@nome_emprestante", aoEmprestimo.EMP_nome_emprestante);
                     cmd.Parameters.AddWithValue("@email_emprestante", aoEmprestimo.EMP_email_emprestante);
                     cmd.Parameters.AddWithValue("@data_devolucao", aoEmprestimo.EMP_devolucao);
@@ -63,12 +61,10 @@ namespace PersoLib_DAL
                 {
                     conn.Open();
                     StringBuilder lsSQLQuery = new StringBuilder();
-                    lsSQLQuery.Append("update lvr_livro set lvr_qtd_disponivel = @disponivel, lvr_qtd_emprestada = @emprestada where lvr_id = @id_livro;");
+                    lsSQLQuery.Append("update lvr_livro set lvr_emprestado = 0 where lvr_id = @id_livro;");
                     lsSQLQuery.Append("delete from emp_emprestimo where emp_id = @emp_id");
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery.ToString(), conn);
                     cmd.Parameters.AddWithValue("@id_livro", aoLivro.LVR_id);
-                    cmd.Parameters.AddWithValue("@emprestada", aoLivro.LVR_emprestado - 1);
-                    cmd.Parameters.AddWithValue("@disponivel", aoLivro.LVR_disponivel + 1);
                     cmd.Parameters.AddWithValue("@emp_id", aoEmprestimo.EMP_id);
                     liResult = cmd.ExecuteNonQuery();
                     cmd.Dispose();

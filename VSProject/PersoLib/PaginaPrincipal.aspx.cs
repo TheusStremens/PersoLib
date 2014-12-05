@@ -25,10 +25,10 @@ namespace PersoLib
             HttpContext.Current.Session["selecao_livro"] = codigo;
         }
 
-        protected void detalhar_livro(object sender, EventArgs e)
+        /*protected void detalhar_livro(object sender, EventArgs e)
         {
             //vamos supor um valor vindo da tela
-            string valor = txt_livro_quantidade.Text;
+            //string valor = txt_livro_quantidade.Text;
             //pra validar vc usa o seguinte codigo
             int valor_em_int = 0;
             if (!Int32.TryParse(valor, out valor_em_int))
@@ -44,7 +44,7 @@ namespace PersoLib
 
                 //ok?
             }
-        }
+        }*/
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -75,40 +75,41 @@ namespace PersoLib
             else
             {
                 loHTMLGridLivros.Append("<table id=\"grid_livros\" runat=\"server\" class=\"table table-striped table-bordered\">");
-                loHTMLGridLivros.Append("<thead><tr><th>Nome do Livro</th><th>Quantidade</th><th>Quantidade Emprestada</th><th class=\"acao\">Ações</th></tr></thead>");
+                loHTMLGridLivros.Append("<thead><tr><th>Nome do Livro</th><th>Emprestado</th><th class=\"acao\">Ações</th></tr></thead>");
                 loHTMLGridLivros.Append("<tbody>");
                 foreach (Entity.Livro loLivro in loListaLivros)
                 {
                     loHTMLGridLivros.Append("<tr><td>");
                     loHTMLGridLivros.Append(loLivro.LVR_nome);
                     loHTMLGridLivros.Append("</td><td>");
-                    loHTMLGridLivros.Append(loLivro.LVR_disponivel);
-                    loHTMLGridLivros.Append("</td><td>");
-                    loHTMLGridLivros.Append(loLivro.LVR_emprestado);
+                    if (loLivro.LVR_emprestado)
+                    {
+                        loHTMLGridLivros.Append("Sim");
+                    }
+                    else
+                        loHTMLGridLivros.Append("Não");
                     loHTMLGridLivros.Append("</td>");
                     loHTMLGridLivros.Append("<td><a title=\"Editar este livro\" onclick=\"selecionar_livro('");
                     loHTMLGridLivros.Append(loLivro.LVR_id.ToString());
                     loHTMLGridLivros.Append("', 'EDITAR', '");
                     loHTMLGridLivros.Append(loLivro.LVR_nome);
-                    loHTMLGridLivros.Append("', '");
-                    loHTMLGridLivros.Append(loLivro.LVR_disponivel);
                     loHTMLGridLivros.Append("');\"");
                     loHTMLGridLivros.Append("class=\"btn btn-primary btn-xs\">");
                     loHTMLGridLivros.Append("<span class=\"glyphicon glyphicon-pencil\"></span></a>");
 
                     loHTMLGridLivros.Append("<a title=\"Excluir este livro\" onclick=\"selecionar_livro('");
                     loHTMLGridLivros.Append(loLivro.LVR_id.ToString());
-                    loHTMLGridLivros.Append("', 'EXCLUIR', ' ', ' ');\"");
+                    loHTMLGridLivros.Append("', 'EXCLUIR', ' ');\"");
                     loHTMLGridLivros.Append("class=\"btn btn-danger btn-xs\">");
 
-                    if (loLivro.LVR_disponivel != loLivro.LVR_emprestado)
+                    if (!loLivro.LVR_emprestado)
                     {
                         loHTMLGridLivros.Append("<span class=\"glyphicon glyphicon-trash\"></span></a>");
                         loHTMLGridLivros.Append("<a title=\"Empreste este livro\" onclick=\"selecionar_livro('");
                         loHTMLGridLivros.Append(loLivro.LVR_id.ToString());
                         loHTMLGridLivros.Append("', 'EMPRESTAR', '");
                         loHTMLGridLivros.Append(loLivro.LVR_nome);
-                        loHTMLGridLivros.Append("', ' ');\"");
+                        loHTMLGridLivros.Append("');\"");
                         loHTMLGridLivros.Append("class=\"btn btn-warning btn-xs\">");
                         loHTMLGridLivros.Append("<span class=\"glyphicon glyphicon-new-window\"></span></a>");
                     }
@@ -213,7 +214,8 @@ namespace PersoLib
             Entity.Usuario loUsuarioLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
             loUsuarioLivro.USR_id = (int)Session["ID_Usuario"];
 
-            Entity.Livro loNovoLivro = new Entity.Livro(this.txt_nome_livro.Text.ToString(), Convert.ToInt32(this.txt_livro_quantidade.Text.ToString()), 0, loUsuarioLivro.USR_id);
+            Entity.Livro loNovoLivro = new Entity.Livro(this.txt_nome_livro.Text.ToString(), loUsuarioLivro.USR_id);
+            loNovoLivro.LVR_emprestado = false;
             string lsMensagemOperacao = string.Empty;
 
             if (!new Business.Livro().InserirNovoLivro(loNovoLivro, loUsuarioLivro, out lsMensagemOperacao))
@@ -235,7 +237,7 @@ namespace PersoLib
             Entity.Usuario loUsuarioAlterarLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
             loUsuarioAlterarLivro.USR_id = (int)Session["ID_Usuario"];
             //ESSE CONVERT.TOIN32 PODE DAR ERRO SE O USUARIO DIGITAR LETRAS
-            Entity.Livro loAlterarLivro = new Entity.Livro(this.txt_editar_livro_nome.Value.ToString(), Convert.ToInt32(this.txt_editar_livro_qtd.Value.ToString()), 0, loUsuarioAlterarLivro.USR_id);
+            Entity.Livro loAlterarLivro = new Entity.Livro(this.txt_editar_livro_nome.Value.ToString(), loUsuarioAlterarLivro.USR_id);
             if (HttpContext.Current.Session["selecao_livro"] != null)
                 loAlterarLivro.LVR_id = Convert.ToInt32(HttpContext.Current.Session["selecao_livro"].ToString());
             string lsMensagemOperacao = string.Empty;
@@ -253,20 +255,16 @@ namespace PersoLib
             ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#edit').modal('show'); </script>", false);
         }
 
-        // REFAZER!
         protected void ExcluirLivro(object sender, EventArgs e)
         {
             string lsMensagem = string.Empty;
             
-            Entity.Usuario loUsuarioDesativadoLivro = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
-            loUsuarioDesativadoLivro.USR_id = (int)Session["ID_Usuario"];
-            Entity.Livro loExcluirLivro = new Entity.Livro(string.Empty, Convert.ToInt32(string.Empty), (Convert.ToInt32(string.Empty) - Convert.ToInt32(string.Empty)), loUsuarioDesativadoLivro.USR_id);
+            Entity.Livro loExcluirLivro = new Entity.Livro(string.Empty, 0);
             if (HttpContext.Current.Session["selecao_livro"] != null)
             {
                 loExcluirLivro.LVR_id = Convert.ToInt32(HttpContext.Current.Session["selecao_livro"].ToString());
             }
                 
-            
             new Business.Livro().RemoverLivro(loExcluirLivro, out lsMensagem);
             this.PreencheGridLivrosUsuario();
         }
@@ -276,9 +274,12 @@ namespace PersoLib
             Entity.Usuario loUsuarioEmprestimo = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
             loUsuarioEmprestimo.USR_id = (int)Session["ID_Usuario"];
             string lsMensagemOperacao = string.Empty;
-            Entity.Livro loLivroEmprestimo = new Entity.Livro(string.Empty, Convert.ToInt32(string.Empty), (Convert.ToInt32(string.Empty) - Convert.ToInt32(string.Empty)), loUsuarioEmprestimo.USR_id);
-
-            Entity.Emprestimo loNovoEmprestimo = new Entity.Emprestimo(loLivroEmprestimo.LVR_id, loUsuarioEmprestimo.USR_id, this.txt_nome_emprestante.Value.ToString(), this.txt_email_emprestante.Value.ToString(), Convert.ToDateTime(this.txt_nova_data.Value.ToString()));
+            Entity.Livro loLivroEmprestimo = new Entity.Livro(string.Empty, loUsuarioEmprestimo.USR_id);
+            if (HttpContext.Current.Session["selecao_livro"] != null)
+            {
+                loLivroEmprestimo.LVR_id = Convert.ToInt32(HttpContext.Current.Session["selecao_livro"].ToString());
+            }
+            Entity.Emprestimo loNovoEmprestimo = new Entity.Emprestimo(loLivroEmprestimo.LVR_id, loUsuarioEmprestimo.USR_id, this.txt_email_emprestante.Value.ToString(), this.txt_nome_emprestante.Value.ToString(), Convert.ToDateTime(this.txt_nova_data.Value.ToString()));
             if (new Business.Emprestimo().InserirNovoEmprestimo(loLivroEmprestimo, loNovoEmprestimo, out lsMensagemOperacao))
             {
                 //adicionar
@@ -289,9 +290,7 @@ namespace PersoLib
                 this.lbl_emprestimo.Text = lsMensagemOperacao;
 
             }
-
         }
-
     }
 }
 

@@ -38,7 +38,7 @@
         });
     </script>
     <script type="text/javascript">
-        function selecionar_livro(id, acao, nome, quantidade) {            
+        function selecionar_livro(id, acao, nome) {            
             $.ajax({
                 type: "POST",
                 url: window.location.href + "/selecao_livro",
@@ -49,7 +49,6 @@
                 success: function () {
                     if (acao == 'EDITAR') {
                         $('#<%= txt_editar_livro_nome.ClientID %>').val(nome);
-                        $('#<%= txt_editar_livro_qtd.ClientID %>').val(quantidade);
                         $('#edit').modal('show');
                     }
                     else if (acao == 'EXCLUIR') {
@@ -123,7 +122,6 @@
 </head>
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
     <form id="form_body" runat="server">
-        <asp:button runat="server" style="visibility: hidden;" formnovalidate id="btn_selecao_livro" onclick="detalhar_livro" />
         <div id="navbar-main">
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
@@ -328,9 +326,6 @@
                         <div class="form-group">
                             <asp:TextBox runat="server" ID="txt_nome_livro" CssClass="form-control " placeholder="Nome do Livro"></asp:TextBox>
                         </div>
-                        <div class="form-group">
-                            <asp:TextBox runat="server" ID="txt_livro_quantidade" CssClass="form-control " placeholder="Quantidade"></asp:TextBox>
-                        </div>
                     </div>
                     <div class="modal-footer ">
                         <asp:LinkButton runat="server" OnClick="CadastrarLivro" ID="btn_criar_livro" CssClass="btn btn-success btn-lg" Style="width: 100%;">
@@ -357,9 +352,6 @@
                         </div>
                         <div class="form-group">
                             <input runat="server" id="txt_editar_livro_nome" class="form-control " type="text" placeholder="Nome do Livro">
-                        </div>
-                        <div class="form-group">
-                            <input runat="server" id="txt_editar_livro_qtd" class="form-control " type="text" placeholder="Quantidade">
                         </div>
                     </div>
                     <div class="modal-footer ">
