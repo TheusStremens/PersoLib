@@ -58,6 +58,42 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_aba1;
         
         /// <summary>
+        /// alert_topo_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_topo_livro;
+        
+        /// <summary>
+        /// lbl_alert_topo_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_alert_topo_livro;
+        
+        /// <summary>
+        /// alert_erro_topo_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_erro_topo_livro;
+        
+        /// <summary>
+        /// lbl_alert_erro_topo_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_alert_erro_topo_livro;
+        
+        /// <summary>
         /// literal_grid_livros control.
         /// </summary>
         /// <remarks>
@@ -67,15 +103,6 @@ namespace PersoLib {
         protected global::System.Web.UI.WebControls.Literal literal_grid_livros;
         
         /// <summary>
-        /// grid_livros control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable grid_livros;
-        
-        /// <summary>
         /// div_aba2 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,51 @@ namespace PersoLib {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_aba2;
+        
+        /// <summary>
+        /// alert_topo_emprestimo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_topo_emprestimo;
+        
+        /// <summary>
+        /// lbl_alert_topo_emprestimo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_alert_topo_emprestimo;
+        
+        /// <summary>
+        /// alert_topo_erro_emprestimo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_topo_erro_emprestimo;
+        
+        /// <summary>
+        /// lbl_alert_topo_erro_emprestimo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_alert_topo_erro_emprestimo;
+        
+        /// <summary>
+        /// literal_grid_emprestimos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literal_grid_emprestimos;
         
         /// <summary>
         /// div_aba3 control.
@@ -193,6 +265,15 @@ namespace PersoLib {
         protected global::System.Web.UI.WebControls.LinkButton btn_criar_livro;
         
         /// <summary>
+        /// btn_cancelar_cadastro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_cancelar_cadastro;
+        
+        /// <summary>
         /// div_msg_alterar_livro control.
         /// </summary>
         /// <remarks>
@@ -218,6 +299,15 @@ namespace PersoLib {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_editar_livro_nome;
+        
+        /// <summary>
+        /// btn_cancelar_edicao_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_cancelar_edicao_livro;
         
         /// <summary>
         /// div_msg_emprestimo control.
@@ -274,6 +364,24 @@ namespace PersoLib {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_nova_data;
         
         /// <summary>
+        /// btn_emprestar_livro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_emprestar_livro;
+        
+        /// <summary>
+        /// btn_cancelar_emprestimo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btn_cancelar_emprestimo;
+        
+        /// <summary>
         /// btn_confirmar_exclusao_livro control.
         /// </summary>
         /// <remarks>
@@ -290,5 +398,59 @@ namespace PersoLib {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btn_desativar_conta;
+        
+        /// <summary>
+        /// LinkButton2141 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton2141;
+        
+        /// <summary>
+        /// alert_alterar_prazo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_alterar_prazo;
+        
+        /// <summary>
+        /// lbl_alert_alterar_prazo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_alert_alterar_prazo;
+        
+        /// <summary>
+        /// txt_nova_data_prazo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_nova_data_prazo;
+        
+        /// <summary>
+        /// LinkButton21212 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton21212;
+        
+        /// <summary>
+        /// LinkButton111 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton111;
     }
 }

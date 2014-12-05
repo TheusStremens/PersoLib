@@ -33,7 +33,7 @@ namespace PersoLib_DAL
                 
                 if (lbValidado)
                 {
-                    if (new DAL.Emprestimo().RealizarEmprestimo(aoLivro, aoEmprestimo) != 1)
+                    if (new DAL.Emprestimo().RealizarEmprestimo(aoLivro, aoEmprestimo) != 2)
                     {
                         lsMensagemOperacao = "Ocorreu um erro no servidor. Tente novamente mais tarde!";
                         lbValidado = false;
@@ -69,28 +69,17 @@ namespace PersoLib_DAL
             }
 
             //Carrega dados do emprestimo utilizando o ID do Usuario
-            public List<Entity.Emprestimo> CarregarEmprestimo(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
+            public List<Entity.Emprestimo> CarregarEmprestimos(Entity.Usuario aoUsuario)
             {
-                lsMensagemOperacao = string.Empty;
-              
                 List<Entity.Emprestimo> loEmprestimo = new DAL.Emprestimo().CarregarEmprestimosUsuario(aoUsuario.USR_id);
-                if(loEmprestimo == null)
-                        lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
-
-                else
-                {
-                    if (loEmprestimo.Count == 0)                
-                        lsMensagemOperacao = "Voce não realizou empréstimos.";
-                
-                }
                 return loEmprestimo;
             }
             
             //Finaliza um emprestimo usando ID do livro e ID do emprestimo
-            public bool RealizaDevolucao(Entity.Livro aoLivro, Entity.Emprestimo aoEmprestimo,out string lsMensagemOperacao)
+            public bool RealizaDevolucao(Entity.Emprestimo aoEmprestimo,out string lsMensagemOperacao)
             {
                 lsMensagemOperacao = string.Empty;
-                if (new DAL.Emprestimo().DevolverEmprestimo(aoLivro, aoEmprestimo) == -1)
+                if (new DAL.Emprestimo().DevolverEmprestimo(aoEmprestimo) == -1)
                 {
                     lsMensagemOperacao = "Ocorreu algum erro! Tente novamente!";
                     return false;

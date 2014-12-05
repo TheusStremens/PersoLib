@@ -26,8 +26,8 @@ namespace PersoLib_DAL
                     conn.Open();
                     StringBuilder lsSQLQuery = new StringBuilder();
                     lsSQLQuery.Append("update lvr_livro set lvr_emprestado = 1 where lvr_id = @id_livro;");
-                    lsSQLQuery.Append("insert into emp_emprestimo(emp_nome_emprestante, emp_email_emprestante, emp_data_devolucao, emp_id_livro, emp_id_usuario) ");
-                    lsSQLQuery.Append("values(@nome_emprestante, @email_emprestante, @data_devolucao, @emp_id_livro, @emp_id_usuario)");
+                    lsSQLQuery.Append("insert into emp_emprestimo(emp_nome_emprestante, emp_email_emprestante, emp_data_devolucao, emp_id_livro, emp_id_usuario, emp_nome_livro) ");
+                    lsSQLQuery.Append("values(@nome_emprestante, @email_emprestante, @data_devolucao, @emp_id_livro, @emp_id_usuario, (select lvr_nome from lvr_livro where lvr_id = @emp_id_livro))");
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery.ToString(), conn);
                     cmd.Parameters.AddWithValue("@id_livro", aoLivro.LVR_id);
                     cmd.Parameters.AddWithValue("@nome_emprestante", aoEmprestimo.EMP_nome_emprestante);
@@ -52,7 +52,7 @@ namespace PersoLib_DAL
              * Remove um emprestimo no banco.
              * Retorna 1 se a operção foi executada com sucesso.
              * Retorna -1 se ocorreu algum erro na operação, seja erro no banco ou alguma violação de integridade. */
-            internal int DevolverEmprestimo(Entity.Livro aoLivro, Entity.Emprestimo aoEmprestimo)
+            internal int DevolverEmprestimo(Entity.Emprestimo aoEmprestimo)
             {
                 int liResult = -1;
                 MySqlConnection conn = new
@@ -61,10 +61,9 @@ namespace PersoLib_DAL
                 {
                     conn.Open();
                     StringBuilder lsSQLQuery = new StringBuilder();
-                    lsSQLQuery.Append("update lvr_livro set lvr_emprestado = 0 where lvr_id = @id_livro;");
+                    lsSQLQuery.Append("update lvr_livro set lvr_emprestado = 0 where lvr_id = (select emp_id_livro from emp_emprestimo where emp_id = @emp_id);");
                     lsSQLQuery.Append("delete from emp_emprestimo where emp_id = @emp_id");
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery.ToString(), conn);
-                    cmd.Parameters.AddWithValue("@id_livro", aoLivro.LVR_id);
                     cmd.Parameters.AddWithValue("@emp_id", aoEmprestimo.EMP_id);
                     liResult = cmd.ExecuteNonQuery();
                     cmd.Dispose();
@@ -113,22 +112,24 @@ namespace PersoLib_DAL
             internal List<Entity.Emprestimo> CarregarEmprestimosUsuario(int aiIdUsuario)
             {
                 List<Entity.Emprestimo> loListaEmprestimos = new List<Entity.Emprestimo>();
-                loListaEmprestimos = null;
+                //loListaEmprestimos = null;
                 MySqlConnection conn = new
                 MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
                 try
                 {
                     conn.Open();
-                    string lsSQLQuery = "select emp_id_livro, emp_email_emprestante, emp_nome_emprestante, emp_data_devolucao from emp_emprestimo where emp_id_usuario = @id_usuario";
+                    string lsSQLQuery = "select emp_id_livro, emp_email_emprestante, emp_nome_emprestante, emp_data_devolucao, emp_nome_livro, emp_id from emp_emprestimo where emp_id_usuario = @id_usuario";
                     MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
 
-                    cmd.Parameters.AddWithValue("@emp_id_usuario", aiIdUsuario);
+                    cmd.Parameters.AddWithValue("@id_usuario", aiIdUsuario);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
                         Entity.Emprestimo loEmprestimo = new Entity.Emprestimo((int)reader.GetValue(0), aiIdUsuario, (string)reader.GetValue(1), (string)reader.GetValue(2), (DateTime)reader.GetValue(3));
+                        loEmprestimo.EMP_nome_livro = (string)reader.GetValue(4);
+                        loEmprestimo.EMP_id = (int)reader.GetValue(5);
                         loListaEmprestimos.Add(loEmprestimo);
                     }
 

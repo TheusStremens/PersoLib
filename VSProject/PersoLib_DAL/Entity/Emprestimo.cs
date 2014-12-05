@@ -15,6 +15,7 @@ namespace PersoLib_DAL
             public string EMP_email_emprestante { set; get; }
             public string EMP_nome_emprestante { set; get; }
             public DateTime EMP_devolucao { set; get; }
+            public string EMP_nome_livro { set; get; }
             
 
             public Emprestimo(int aEMP_id_livro, int aEMP_id_usuario, string aEMP_email_emprestante,

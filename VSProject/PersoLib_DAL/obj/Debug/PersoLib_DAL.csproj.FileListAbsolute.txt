@@ -13,3 +13,4 @@ C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\bin\Debug\Per
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\bin\Debug\PersoLib_DAL.pdb
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.dll
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.pdb
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.csprojResolveAssemblyReference.cache
