@@ -190,7 +190,7 @@
                                         </div>
                                         <h1>Biblioteca</h1>
                                         <h4>Aqui se encontram todos os seus livros. Você pode cadastrar novos livros sempre que quiser. Na aba Ações é possível
-                                            editar, excluir ou emprestar um livro.
+                                            editar, excluir ou emprestar um livro. Um livro emprestado não poderá ser excluido ou alterado
                                         </h4>
                                         <a class="btn btn-success" data-toggle="modal" data-target="#modal_novo_livro">Cadastrar novo livro</a>
                                     </div>

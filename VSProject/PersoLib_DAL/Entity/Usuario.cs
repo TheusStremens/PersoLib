@@ -14,6 +14,7 @@ namespace PersoLib_DAL
             public string USR_nome { set; get; }
             public string USR_senha { set; get; }
             public string USR_repete_senha { set; get; }
+            public bool USR_ativo { set; get; }
 
             public Usuario(string aUSR_email, string aUSR_nome, string aUSR_senha, string aUSR_repete_senha)
             {

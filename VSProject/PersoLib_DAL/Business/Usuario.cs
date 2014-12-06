@@ -81,7 +81,14 @@ namespace PersoLib_DAL
                     lsMensagemOperacao = "Senha invalida para este login!";
                     return ID;
                 }
+                
                 ID = new DAL.Usuario().LoginUsuario(aoUsuario);
+                if (!aoUsuario.USR_ativo)
+                {
+                    new DAL.Usuario().AtivarUsuario(aoUsuario);
+                    lsMensagemOperacao = "Usuario reativado!";
+                }
+
                 return ID;
             }
 

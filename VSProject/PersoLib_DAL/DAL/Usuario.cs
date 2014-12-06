@@ -260,6 +260,39 @@ namespace PersoLib_DAL
 
                 return loUsuario;
             }
+
+            internal int AtivarUsuario(Entity.Usuario aoUsuario)
+            {
+                int liResult = -1;
+                MySqlConnection conn = new
+                MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+                try
+                {
+                    conn.Open();
+
+                    StringBuilder loStb = new StringBuilder();
+                    loStb.Append("UPDATE usr_usuario SET ");
+                    loStb.Append("USR_ativo = 1 ");
+                    loStb.Append(" where USR_id = @id ");
+                    MySqlCommand cmd = new MySqlCommand(loStb.ToString(), conn);
+                    cmd.Parameters.AddWithValue("@id", aoUsuario.USR_id);
+
+                    liResult = cmd.ExecuteNonQuery();
+
+                    cmd.Dispose();
+                    cmd.Parameters.Clear();
+                }
+                catch (MySqlException ex)
+                {
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                return liResult;
+            }
         }
     }
 }

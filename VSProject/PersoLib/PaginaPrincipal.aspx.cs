@@ -312,8 +312,10 @@ namespace PersoLib
                     loHTMLGridLivros.Append("');\"");
                     loHTMLGridLivros.Append("class=\"btn btn-primary btn-xs\">");
                     loHTMLGridLivros.Append("<span class=\"glyphicon glyphicon-pencil\"></span></a>");
-
-                    loHTMLGridLivros.Append("<a title=\"Excluir este livro\" onclick=\"selecionar_livro('");
+                    if (loLivro.LVR_emprestado)
+                        loHTMLGridLivros.Append("<a title=\"Excluir este livro\" disabled onclick=\"selecionar_livro('");
+                    else
+                        loHTMLGridLivros.Append("<a title=\"Excluir este livro\" onclick=\"selecionar_livro('");
                     loHTMLGridLivros.Append(loLivro.LVR_id.ToString());
                     loHTMLGridLivros.Append("', 'EXCLUIR', ' ');\"");
                     loHTMLGridLivros.Append("class=\"btn btn-danger btn-xs\">");
