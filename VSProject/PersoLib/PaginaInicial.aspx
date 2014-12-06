@@ -91,29 +91,16 @@
                 <br>
                 <h1 class="centered">Sobre nós</h1>
                 <hr>
-                <div class="col-lg-6 text-justify">
+                <div class="col-lg-12 text-justify">
                     <p>
-                        Caros amigos, a execução dos pontos do programa auxilia a preparação e a composição
-                    do retorno esperado a longo prazo. Percebemos, cada vez mais, que a constante divulgação
-                    das informações agrega valor ao estabelecimento do fluxo de informações. Não obstante,
-                    a consulta aos diversos militantes não pode mais se dissociar das condições financeiras
-                    e administrativas exigidas. É importante questionar o quanto a expansão dos mercados
-                    mundiais prepara-nos para enfrentar situações atípicas decorrentes dos índices pretendidos.
-                    O cuidado em identificar pontos críticos na competitividade nas transações comerciais
-                    garante a contribuição de um grupo importante na determinação das diretrizes de
-                    desenvolvimento para o futuro.
-                    </p>
-                </div>
-                <div class="col-lg-6 text-justify">
-                    <p>
-                        A prática cotidiana prova que o aumento do diálogo entre os diferentes setores produtivos
-                    assume importantes posições no estabelecimento das formas de ação. No entanto, não
-                    podemos esquecer que o surgimento do comércio virtual pode nos levar a considerar
-                    a reestruturação dos níveis de motivação departamental. Assim mesmo, a consolidação
-                    das estruturas obstaculiza a apreciação da importância dos procedimentos normalmente
-                    adotados. Acima de tudo, é fundamental ressaltar que a contínua expansão de nossa
-                    atividade oferece uma interessante oportunidade para verificação dos modos de operação
-                    convencionais.
+                        PersoLib é um projeto idealizado pelo prof. Ivan Machado, durante o curso da disciplina Engenharia de Software II,
+                        oferecido pela Universidade Federal da Bahia, no curso de Ciência da Computação.
+                        O PersoLib irá gerenciar seu controle de empréstimos de livros, mas de forma eletrônica. Você não precisará mais lembrar
+                        por si só a quem você emprestou aquele seu livro e que nunca mais foi visto.
+                        Você pode inserir novos livros na sua estante virtual, bem como editá-los e deletá-los. Você pode também conferir quais livros
+                        estão emprestados, a fim de lembrar com quem estão seus amados livros, e saber de quem cobrar. Falando nisso, não se preocupe. 
+                        O PersoLib irá notificar aos seus amigos, para não deixá-los esquecer de devolver seus preciosos. Deixe com a gente, iremos 
+                        cuidar de seus livros como se fossem nossos.
                     </p>
                 </div>
             </div>
