@@ -71,17 +71,12 @@ namespace PersoLib_DAL
             {
                 lsMensagemOperacao = string.Empty;
                 int ID = -1;
-                if (!(VerificaExistenciaEmail(aoUsuario)))
+                if (!(VerificaExistenciaEmail(aoUsuario)) || (new DAL.Usuario().LoginUsuario(aoUsuario) == -1) )
                 {
-                    lsMensagemOperacao = "Não existe usuario com este e-mail!";
+                    lsMensagemOperacao = "O e-mail e/ou a senha estão incorretos!";
                     return ID;
                 }
-                else if (new DAL.Usuario().LoginUsuario(aoUsuario) == -1)
-                {
-                    lsMensagemOperacao = "Senha invalida para este login!";
-                    return ID;
-                }
-                
+               
                 ID = new DAL.Usuario().LoginUsuario(aoUsuario);
                 if (!aoUsuario.USR_ativo)
                 {

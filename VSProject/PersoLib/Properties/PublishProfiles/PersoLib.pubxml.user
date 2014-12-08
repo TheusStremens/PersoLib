@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\PersoLib</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="assets/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/animate-custom.css">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/bootstrap.css">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/bootstrap.css.map">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/dataTables.bootstrap.css">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/datepicker.css">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/icomoon.css">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/icomoon/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/icomoon/icomoon-.eot">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/icomoon/icomoon.eot">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/icomoon/icomoon.svg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/icomoon/icomoon.ttf">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/icomoon/icomoon.woff">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/css/main.css">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/backup/glyphicons-halflings-regular.eot">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/backup/glyphicons-halflings-regular.svg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/backup/glyphicons-halflings-regular.ttf">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/backup/glyphicons-halflings-regular.woff">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/images/sort_asc.png">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/images/sort_both.png">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/images/sort_desc.png">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/bg/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/bg/divider1.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/bg/divider2.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/bg/divider3.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/bg/divider4.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/bg/divider6.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/header_bg.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/iphone.png">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/macbook.png">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio01.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio02.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio03.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio04.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio05.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio06.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio07.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio08.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/folio09.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/team/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/team/team01.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/team/team02.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/team/team03.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/img/team/team04.jpg">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/.DS_Store">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/bootstrap-datepicker.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/bootstrap.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/bootstrap.min.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/dataTables.bootstrap.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/interact.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/jasny-bootstrap.min.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/jquery-1.10.2.min.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/jquery-func.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/jquery.dataTables.min.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/jquery.easing.1.3.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/jquery.min.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/modernizr.custom.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/retina.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="assets/js/smoothscroll.js">
+      <publishTime>12/08/2014 14:10:01</publishTime>
+    </File>
+    <File Include="bin/dll/MySql.Data.dll">
+      <publishTime>12/07/2014 19:21:00</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>12/07/2014 19:21:00</publishTime>
+    </File>
+    <File Include="bin/PersoLib.dll">
+      <publishTime>12/08/2014 17:27:39</publishTime>
+    </File>
+    <File Include="bin/PersoLib_DAL.dll">
+      <publishTime>12/08/2014 17:16:49</publishTime>
+    </File>
+    <File Include="PaginaInicial.aspx">
+      <publishTime>12/08/2014 17:26:12</publishTime>
+    </File>
+    <File Include="PaginaPrincipal.aspx">
+      <publishTime>12/08/2014 17:29:39</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/08/2014 16:06:28</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

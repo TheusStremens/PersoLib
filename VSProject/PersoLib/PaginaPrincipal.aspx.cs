@@ -1,16 +1,14 @@
 ﻿using PersoLib_DAL;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace PersoLib
 {
-    public partial class PaginaPrincipal : System.Web.UI.Page
+    public partial class PaginaPrincipal : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -85,19 +83,24 @@ namespace PersoLib
             if (HttpContext.Current.Session["selecao_livro"] != null)
             {
                 loAlterarLivro.LVR_id = Convert.ToInt32(HttpContext.Current.Session["selecao_livro"].ToString());
-            }
-            string lsMensagemOperacao = string.Empty;
-            if (!new Business.Livro().AlterarLivro(loAlterarLivro, out lsMensagemOperacao))
-            {
-                this.div_msg_alterar_livro.Visible = true;
-                this.lbl_msg_alterar_livro.Text = lsMensagemOperacao;
-                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#edit').modal('show'); </script>", false);
+                string lsMensagemOperacao = string.Empty;
+                if (!new Business.Livro().AlterarLivro(loAlterarLivro, out lsMensagemOperacao))
+                {
+                    this.div_msg_alterar_livro.Visible = true;
+                    this.lbl_msg_alterar_livro.Text = lsMensagemOperacao;
+                    ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#edit').modal('show'); </script>", false);
+                }
+                else
+                {
+                    this.alert_topo_livro.Visible = true;
+                    this.lbl_alert_topo_livro.Text = "Seu livro foi alterado com sucesso!";
+                    this.PreencheGridLivrosUsuario();
+                }
             }
             else
             {
-                this.alert_topo_livro.Visible = true;
-                this.lbl_alert_topo_livro.Text = "Seu livro foi alterado com sucesso!";
-                this.PreencheGridLivrosUsuario();
+                this.alert_erro_topo_livro.Visible = true;
+                this.lbl_alert_erro_topo_livro.Text = "Não foi possível atualizar o livro. Tente novamente!";
             }
         }
 
@@ -109,18 +112,24 @@ namespace PersoLib
             if (HttpContext.Current.Session["selecao_livro"] != null)
             {
                 loExcluirLivro.LVR_id = Convert.ToInt32(HttpContext.Current.Session["selecao_livro"].ToString());
-            }
-            if (new Business.Livro().RemoverLivro(loExcluirLivro, out lsMensagem))
-            {
-                this.alert_topo_livro.Visible = true;
-                this.lbl_alert_topo_livro.Text = "Seu livro foi excluido com sucesso!";
+
+                if (new Business.Livro().RemoverLivro(loExcluirLivro, out lsMensagem))
+                {
+                    this.alert_topo_livro.Visible = true;
+                    this.lbl_alert_topo_livro.Text = "Seu livro foi excluido com sucesso!";
+                }
+                else
+                {
+                    this.alert_erro_topo_livro.Visible = true;
+                    this.lbl_alert_erro_topo_livro.Text = "Ocorreu um erro no servidor. Tente novamente mais tarde!";
+                }
+                this.PreencheGridLivrosUsuario();
             }
             else
             {
                 this.alert_erro_topo_livro.Visible = true;
-                this.lbl_alert_erro_topo_livro.Text = "Ocorreu um erro no servidor. Tente novamente mais tarde!";
+                this.lbl_alert_erro_topo_livro.Text = "Não foi possível excluir o livro. Tente novamente!";
             }
-            this.PreencheGridLivrosUsuario();
         }
 
         protected void AlterarPrazo(object sender, EventArgs e)
@@ -130,18 +139,24 @@ namespace PersoLib
             if (HttpContext.Current.Session["selecao_emprestimo"] != null)
             {
                 loEmprestimoAlterar.EMP_id = Convert.ToInt32(HttpContext.Current.Session["selecao_emprestimo"].ToString());
-            }
-            if (new Business.Emprestimo().AlterarPrazo(loEmprestimoAlterar, out lsMensagemOperacao))
-            {
-                this.alert_topo_emprestimo.Visible = true;
-                this.lbl_alert_topo_emprestimo.Text = "O prazo de devolução do seu empréstimo foi alterado com sucesso!";
-                this.PreencheGridEmprestimosUsuario();
+
+                if (new Business.Emprestimo().AlterarPrazo(loEmprestimoAlterar, out lsMensagemOperacao))
+                {
+                    this.alert_topo_emprestimo.Visible = true;
+                    this.lbl_alert_topo_emprestimo.Text = "O prazo de devolução do seu empréstimo foi alterado com sucesso!";
+                    this.PreencheGridEmprestimosUsuario();
+                }
+                else
+                {
+                    this.alert_alterar_prazo.Visible = true;
+                    this.lbl_alert_alterar_prazo.Text = lsMensagemOperacao;
+                    ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_alterar_prazo').modal('show'); </script>", false);
+                }
             }
             else
             {
-                this.alert_alterar_prazo.Visible = true;
-                this.lbl_alert_alterar_prazo.Text = lsMensagemOperacao;
-                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_alterar_prazo').modal('show'); </script>", false);
+                this.alert_topo_erro_emprestimo.Visible = true;
+                this.lbl_alert_topo_erro_emprestimo.Text = "Não foi possível alterar o prazo. Tente novamente!";
             }
         }
 
@@ -152,18 +167,24 @@ namespace PersoLib
             if (HttpContext.Current.Session["selecao_emprestimo"] != null)
             {
                 loEmprestimoFinalizar.EMP_id = Convert.ToInt32(HttpContext.Current.Session["selecao_emprestimo"].ToString());
-            }
-            if (new Business.Emprestimo().RealizaDevolucao(loEmprestimoFinalizar, out lsMensagemOperacao))
-            {
-                this.alert_topo_emprestimo.Visible = true;
-                this.lbl_alert_topo_emprestimo.Text = "Este empréstimo foi finalizado! Agora o livro já está disponível para ser emprestado novamente!";
-                this.PreencheGridEmprestimosUsuario();
-                this.PreencheGridLivrosUsuario();
+
+                if (new Business.Emprestimo().RealizaDevolucao(loEmprestimoFinalizar, out lsMensagemOperacao))
+                {
+                    this.alert_topo_emprestimo.Visible = true;
+                    this.lbl_alert_topo_emprestimo.Text = "Este empréstimo foi finalizado! Agora o livro já está disponível para ser emprestado novamente!";
+                    this.PreencheGridEmprestimosUsuario();
+                    this.PreencheGridLivrosUsuario();
+                }
+                else
+                {
+                    this.alert_topo_erro_emprestimo.Visible = true;
+                    this.lbl_alert_topo_erro_emprestimo.Text = "Ocorreu um erro no servidor. Tente novamente mais tarde!";
+                }
             }
             else
             {
                 this.alert_topo_erro_emprestimo.Visible = true;
-                this.lbl_alert_topo_erro_emprestimo.Text = "Ocorreu um erro no servidor. Tente novamente mais tarde!";
+                this.lbl_alert_topo_erro_emprestimo.Text = "Não foi possível finalizar o empréstimo. Tente novamente!";
             }
         }
 
@@ -176,20 +197,26 @@ namespace PersoLib
             if (HttpContext.Current.Session["selecao_livro"] != null)
             {
                 loLivroEmprestimo.LVR_id = Convert.ToInt32(HttpContext.Current.Session["selecao_livro"].ToString());
-            }
-            Entity.Emprestimo loNovoEmprestimo = new Entity.Emprestimo(loLivroEmprestimo.LVR_id, loUsuarioEmprestimo.USR_id, this.txt_email_emprestante.Value.ToString(), this.txt_nome_emprestante.Value.ToString(), Convert.ToDateTime(this.txt_nova_data.Value.ToString()));
-            if (new Business.Emprestimo().InserirNovoEmprestimo(loLivroEmprestimo, loNovoEmprestimo, out lsMensagemOperacao))
-            {
-                this.alert_topo_livro.Visible = true;
-                this.lbl_alert_topo_livro.Text = "Seu livro foi emprestado com sucesso. Você pode conferir na aba de Empréstimos!";
-                this.PreencheGridLivrosUsuario();
-                this.PreencheGridEmprestimosUsuario();
+
+                Entity.Emprestimo loNovoEmprestimo = new Entity.Emprestimo(loLivroEmprestimo.LVR_id, loUsuarioEmprestimo.USR_id, this.txt_email_emprestante.Value.ToString(), this.txt_nome_emprestante.Value.ToString(), Convert.ToDateTime(this.txt_nova_data.Value.ToString()));
+                if (new Business.Emprestimo().InserirNovoEmprestimo(loLivroEmprestimo, loNovoEmprestimo, out lsMensagemOperacao))
+                {
+                    this.alert_topo_livro.Visible = true;
+                    this.lbl_alert_topo_livro.Text = "Seu livro foi emprestado com sucesso. Você pode conferir na aba de Empréstimos!";
+                    this.PreencheGridLivrosUsuario();
+                    this.PreencheGridEmprestimosUsuario();
+                }
+                else
+                {
+                    this.div_msg_emprestimo.Visible = true;
+                    this.lbl_emprestimo.Text = lsMensagemOperacao;
+                    ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_novo_emprestimo').modal('show'); </script>", false);
+                }
             }
             else
             {
-                this.div_msg_emprestimo.Visible = true;
-                this.lbl_emprestimo.Text = lsMensagemOperacao;
-                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_novo_emprestimo').modal('show'); </script>", false);
+                this.alert_erro_topo_livro.Visible = true;
+                this.lbl_alert_erro_topo_livro.Text = "Não foi possível emprestar o livro. Tente novamente!";
             }
         }
 
@@ -239,7 +266,7 @@ namespace PersoLib
             List<Entity.Emprestimo> loListaEmprestimos = new Business.Emprestimo().CarregarEmprestimos(loUsuarioLogado);
             if (loListaEmprestimos == null || loListaEmprestimos.Count == 0)
             {
-                this.literal_grid_emprestimos.Text = "<h2>Você não realizou nenhum livro emprestimo</h2>";
+                this.literal_grid_emprestimos.Text = "<h2>Você não realizou nenhum emprestimo</h2>";
             }
             else
             {
@@ -256,16 +283,16 @@ namespace PersoLib
                     loHTMLGridEmprestimos.Append(loEmprestimo.EMP_email_emprestante);
                     loHTMLGridEmprestimos.Append("</td><td>");
                     loHTMLGridEmprestimos.Append(loEmprestimo.EMP_devolucao.ToString("dd/MM/yyyy"));
-                    loHTMLGridEmprestimos.Append("</td><td><span style=\"padding-left: 14px;\"><a title=\"Alterar prazo\" class=\"btn btn-warning btn-xs\" data-toggle=\"modal\"");
-                    loHTMLGridEmprestimos.Append("data-target=\"#modal_alterar_prazo\" onclick=\"selecionar_emprestimo('");
+                    loHTMLGridEmprestimos.Append("</td><td><span style=\"padding-left: 14px;\"><a title=\"Alterar prazo\" class=\"btn btn-warning btn-xs\" ");
+                    loHTMLGridEmprestimos.Append(" onclick=\"selecionar_emprestimo('");
                     loHTMLGridEmprestimos.Append(loEmprestimo.EMP_id);
                     loHTMLGridEmprestimos.Append("', 'PRAZO', '");
                     loHTMLGridEmprestimos.Append(loEmprestimo.EMP_devolucao.ToString("dd/MM/yyyy"));
                     loHTMLGridEmprestimos.Append("');\" ");
                     loHTMLGridEmprestimos.Append("><span class=\"glyphicon glyphicon-calendar\"></span></a>");
                     
-                    loHTMLGridEmprestimos.Append("<a title=\"Finalizar empréstimo\" class=\"btn btn-success btn-xs\" data-toggle=\"modal\"");
-                    loHTMLGridEmprestimos.Append("data-target=\"#modal_finalizar_emprestimo\" onclick=\"selecionar_emprestimo('");
+                    loHTMLGridEmprestimos.Append("<a title=\"Finalizar empréstimo\" class=\"btn btn-success btn-xs\" ");
+                    loHTMLGridEmprestimos.Append(" onclick=\"selecionar_emprestimo('");
                     loHTMLGridEmprestimos.Append(loEmprestimo.EMP_id);
                     loHTMLGridEmprestimos.Append("', 'FINALIZAR', ' ');\" ");
                     loHTMLGridEmprestimos.Append("><span class=\"glyphicon glyphicon-ok\"></span></a></span>");

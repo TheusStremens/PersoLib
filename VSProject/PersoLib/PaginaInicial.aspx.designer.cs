@@ -64,7 +64,7 @@ namespace PersoLib {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_email_cadastro;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_email_cadastro;
         
         /// <summary>
         /// txt_name control.
@@ -136,7 +136,7 @@ namespace PersoLib {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_email_login;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_email_login;
         
         /// <summary>
         /// txt_senha_login control.

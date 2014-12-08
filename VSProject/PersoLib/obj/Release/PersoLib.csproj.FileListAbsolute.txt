@@ -1,0 +1,10 @@
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\dll\MySql.Data.dll
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.dll.config
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.dll
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.pdb
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib_DAL.dll
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\MySql.Data.dll
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib_DAL.pdb
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Release\PersoLib.csprojResolveAssemblyReference.cache
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Release\PersoLib.dll
+C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Release\PersoLib.pdb
