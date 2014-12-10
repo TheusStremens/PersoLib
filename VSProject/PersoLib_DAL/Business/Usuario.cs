@@ -78,14 +78,21 @@ namespace PersoLib_DAL
                 }
                
                 ID = new DAL.Usuario().LoginUsuario(aoUsuario);
+               
+                return ID;
+            }
+
+            public bool ReativarUsuario(Entity.Usuario aoUsuario)
+            {
                 if (!aoUsuario.USR_ativo)
                 {
                     new DAL.Usuario().AtivarUsuario(aoUsuario);
-                    lsMensagemOperacao = "Usuario reativado!";
+                    return true;
                 }
+                return false;
 
-                return ID;
             }
+
 
             public bool AlterarUsuario(Entity.Usuario aoUsuario, out string lsMensagemOperacao)
             {

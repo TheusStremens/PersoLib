@@ -1,6 +1,3 @@
-C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.csprojResolveAssemblyReference.cache
-C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.dll
-C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.pdb
 E:\Workspace\VSProject\PersoLib_DAL\bin\Debug\PersoLib_DAL.dll
 E:\Workspace\VSProject\PersoLib_DAL\bin\Debug\PersoLib_DAL.pdb
 E:\Workspace\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.dll
@@ -15,3 +12,9 @@ C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\bin\Debug\Per
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\bin\Debug\MySql.Data.dll
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.dll
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.pdb
+C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\bin\Debug\dll\MySql.Data.dll
+C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\bin\Debug\PersoLib_DAL.dll
+C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\bin\Debug\PersoLib_DAL.pdb
+C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\bin\Debug\MySql.Data.dll
+C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.dll
+C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib_DAL\obj\Debug\PersoLib_DAL.pdb
