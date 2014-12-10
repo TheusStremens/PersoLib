@@ -44,5 +44,3 @@ C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib_DAL.
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.dll
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.pdb
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\dll\MySql.Data.dll
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\MySql.Data.dll
