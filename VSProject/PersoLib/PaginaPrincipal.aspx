@@ -573,6 +573,25 @@
                 </div>
             </div>
         </div>
+        <div runat="server" id="modal_reativacao" data-backdrop="static" class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title custom_align">Reativacao de Conta</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-justify alert alert-sucess">
+                            Sua conta foi reativada com sucesso! Agora você já pode recomeçar a usar a Biblioteca Pessoal!
+                        </div>
+                        <div class="modal-footer-sm">
+                            <button runat="server" onserverclick="FecharPopupReativacao" type="button" class="btn btn-success">
+                                <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;Ok
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>
