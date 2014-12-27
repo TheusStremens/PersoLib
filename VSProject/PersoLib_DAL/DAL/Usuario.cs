@@ -271,8 +271,11 @@ namespace PersoLib_DAL
                 {
                     conn.Open();
 
-                    string lsSQLQuery = "update usr_usuario set USR_ativo = 1 where USR_id = @id";
-                    MySqlCommand cmd = new MySqlCommand(lsSQLQuery, conn);
+                    StringBuilder loStb = new StringBuilder();
+                    loStb.Append("UPDATE usr_usuario SET ");
+                    loStb.Append("USR_ativo = 1 ");
+                    loStb.Append(" where USR_id = @id ");
+                    MySqlCommand cmd = new MySqlCommand(loStb.ToString(), conn);
                     cmd.Parameters.AddWithValue("@id", aoUsuario.USR_id);
 
                     liResult = cmd.ExecuteNonQuery();

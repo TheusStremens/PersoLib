@@ -26,6 +26,14 @@ C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib\bin\PersoLib_DAL
 C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
 C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.dll
 C:\Users\Frederico\Documents\Github\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.pdb
+C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.dll.config
+C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.dll
+C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.pdb
+C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib_DAL.dll
+C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib_DAL.pdb
+C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
+C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.dll
+C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.pdb
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\dll\MySql.Data.dll
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.dll.config
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.dll
@@ -37,12 +45,4 @@ C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLi
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.dll
 C:\Users\Stremens\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.pdb
 C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\dll\MySql.Data.dll
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.dll.config
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.dll
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib.pdb
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib_DAL.dll
 C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\MySql.Data.dll
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\bin\PersoLib_DAL.pdb
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.csprojResolveAssemblyReference.cache
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.dll
-C:\Users\Philippe Correia\Documents\GitHub\PersoLib\VSProject\PersoLib\obj\Debug\PersoLib.pdb
