@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PersoLib- Biblioteca Pessoal</title>
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/icomoon.css">
@@ -151,7 +151,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="glyphicon glyphicon-th-list" style="font-size: 30px; color: #3498db;"></span>
+                            <span class="icon icon-shield" style="font-size: 30px; color: #3498db;"></span>
                         </button>
                     </div>
                     <div class="navbar-collapse collapse">
