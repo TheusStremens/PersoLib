@@ -17,7 +17,6 @@ namespace PersoLib
                 this.PreenchePerfilUsuario();
                 this.PreencheGridLivrosUsuario();
                 this.PreencheGridEmprestimosUsuario();
-                this.ReativarUsuario();
             }
 
             if (HttpContext.Current.Session["selecao_aba"] != null)
@@ -428,26 +427,6 @@ namespace PersoLib
                 this.div_aba3.Attributes.Add("class", "active");
             }
         }
-
-        protected void ReativarUsuario()
-        {
-            Entity.Usuario loUsuarioLogado = new Entity.Usuario(string.Empty, string.Empty, string.Empty, string.Empty);
-            loUsuarioLogado.USR_id = (int)Session["ID_Usuario"];
-            loUsuarioLogado = new Business.Usuario().CarregarDados(loUsuarioLogado);
-            if (loUsuarioLogado.USR_ativo == false)
-            {
-                new Business.Usuario().ReativarUsuario(loUsuarioLogado);
-                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "abrir_popup", "<script> $('#modal_reativacao').modal('show'); </script>", false);
-
-            }
-        }
-
-
-        protected void FecharPopupReativacao(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "fechar_popup_reativacao", "<script> $('#modal_reativacao').modal('hide'); </script>", false);
-        }
-
     }
 }
 
